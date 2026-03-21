@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperformula Music | Relevation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --accent: #00f2ff; /* Neon Cyan */
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Hero Header */
+        header {
+            padding: 100px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .label-logo {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            margin: 0;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 10px;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Featured Album Section */
+        .featured-artist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .album-art-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #111;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* Visual placeholder for your 3000x3000px art */
+        .album-art-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artist-info h2 { font-size: 0.9rem; color: var(--accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 5px; }
+        .artist-info h1 { font-size: 3.5rem; margin: 0; line-height: 1; }
+        .album-title { font-size: 1.5rem; color: var(--text-dim); margin: 10px 0 30px; }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.4);
+        }
+
+        /* Social/Link Grid */
+        .links-grid {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon-link {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .icon-link:hover { color: var(--accent); }
+
+        /* Description Section */
+        .about-section {
+            text-align: center;
+            margin-top: 100px;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.8rem;
+            color: #444;
+        }
+
+        @media (max-width: 768px) {
+            .featured-artist { grid-template-columns: 1fr; text-align: center; }
+            .links-grid { justify-content: center; }
+            .artist-info h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="label-logo">Hyperformula</h1>
+    <div class="tagline">Hybrid Media • Human Music • DJ Mixes</div>
+</header>
+
+<div class="container">
+    <section class="featured-artist">
+        <div class="album-art-container">
+            <img src="relevation_cover.jpg" alt="Mad Influence - Relevation">
+        </div>
+
+        <div class="artist-info">
+            <h2>Featured Artist</h2>
+            <h1>Mad Influence</h1>
+            <p class="album-title">New Album: <em>RELEVATION</em><br>Releasing April 3rd, 2026</p>
+            
+            <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="cta-button">Pre-Order Now</a>
+
+            <div class="links-grid">
+                <a href="https://open.spotify.com/artist/4VVObHZcmGMuDQIeE4Eor3" class="icon-link" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://soundcloud.com/madinfluence" class="icon-link" target="_blank"><i class="fab fa-soundcloud"></i></a>
+                <a href="mailto:buffthenerfadmin@protonmail.com" class="icon-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <p><strong>Hyperformula Music</strong> is an independent label focusing on creative DJ mixes, human music production, and <strong>HITL</strong> (Hybrid Media Production).</p>
+            <p>Visit our label soundcloud at <a href="https://soundcloud.com/hyperformulamusic" style="color:var(--accent); text-decoration: none;">soundcloud.com/hyperformulamusic</a></p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 HYPERFORMULA MUSIC. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
