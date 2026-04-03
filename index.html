@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyperformula Music | RELEVATION OUT NOW</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;600;700&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -23,6 +26,7 @@
             font-family: 'Outfit', sans-serif;
             margin: 0;
             line-height: 1.6;
+            font-weight: 300;
         }
 
         header {
@@ -33,13 +37,22 @@
 
         .label-name {
             font-family: 'Syncopate', sans-serif;
-            font-size: clamp(1.5rem, 6vw, 3.5rem);
+            font-size: clamp(1.2rem, 5vw, 3rem);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 10px;
+            letter-spacing: 6px;
             margin: 0;
             color: var(--neon-purple);
-            text-shadow: 0 0 20px rgba(240, 50, 255, 0.4);
+            text-shadow: 0 0 15px rgba(240, 50, 255, 0.4);
+        }
+
+        .hitl-tag {
+            color: var(--text-dim);
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            margin-top: 15px;
+            text-transform: uppercase;
         }
 
         .container {
@@ -48,8 +61,8 @@
             padding: 20px;
         }
 
-        /* MAIN RELEASE SECTION */
-        .release-hero {
+        /* HERO SECTIONS (RELEASE & MERCH) */
+        .hero-section {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
@@ -61,15 +74,32 @@
             border-left: 5px solid var(--neon-purple);
         }
 
-        .album-art {
+        .merch-section {
+            border-left: 5px solid #ffffff;
+            border-right: 5px solid var(--neon-purple);
+        }
+
+        .image-wrap {
             flex: 1;
             min-width: 300px;
             box-shadow: 0 0 30px rgba(0,0,0,0.8);
         }
 
-        .album-art img { width: 100%; display: block; border: 1px solid rgba(255,255,255,0.1); }
+        .image-wrap img { 
+            width: 100%; 
+            display: block; 
+            border: 1px solid rgba(255,255,255,0.1); 
+        }
 
-        .release-info { flex: 1.5; min-width: 300px; }
+        /* Merch placeholder dashed line */
+        .merch-placeholder {
+            border: 1px dashed rgba(240, 50, 255, 0.5) !important;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .merch-placeholder:hover { opacity: 1; }
+
+        .content-info { flex: 1.5; min-width: 300px; }
 
         .status-tag {
             color: var(--neon-purple);
@@ -77,10 +107,11 @@
             font-size: 0.7rem;
             letter-spacing: 3px;
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
-        .release-info h1 { font-family: 'Syncopate', sans-serif; font-size: 2.2rem; margin: 0; }
-        .release-info h2 { font-size: 1.2rem; color: var(--text-dim); margin: 5px 0 25px; font-weight: 300; }
+        .content-info h1 { font-family: 'Syncopate', sans-serif; font-size: 2rem; margin: 0; letter-spacing: 1px; }
+        .content-info h2 { font-size: 1.1rem; color: var(--text-dim); margin: 5px 0 25px; font-weight: 400; }
 
         /* BUTTONS */
         .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
@@ -95,6 +126,7 @@
             text-decoration: none;
             font-family: 'Syncopate', sans-serif;
             font-size: 0.7rem;
+            font-weight: 600;
             transition: all 0.3s;
             text-transform: uppercase;
             text-align: center;
@@ -102,6 +134,16 @@
 
         .btn i { margin-right: 10px; font-size: 1.1rem; }
         .btn:hover { background: var(--neon-purple); color: black; box-shadow: 0 0 15px var(--neon-purple); }
+
+        .btn-massive {
+            background: var(--neon-purple);
+            color: black;
+            font-size: 1rem;
+            padding: 18px;
+            border: none;
+            box-shadow: 0 0 20px rgba(240, 50, 255, 0.3);
+        }
+        .btn-massive:hover { box-shadow: 0 0 30px rgba(240, 50, 255, 0.8); background: #ffffff; color: black; }
 
         /* SECTION HEADERS */
         .section-title {
@@ -112,13 +154,14 @@
             margin: 60px 0 30px;
             text-transform: uppercase;
             text-align: center;
+            font-weight: 600;
         }
 
         /* ARTIST & SOCIAL GRIDS */
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 
         .card {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.02);
             padding: 25px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.05);
@@ -126,8 +169,7 @@
         }
 
         .card:hover { border: 1px solid var(--neon-purple); }
-
-        .card h3 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; margin-bottom: 20px; }
+        .card h3 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; }
 
         footer {
             text-align: center;
@@ -137,23 +179,23 @@
         }
 
         .contact-email { color: var(--neon-purple); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; }
-
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="label-name">HYPERFORMULA</h1>
+    <h1 class="label-name">HYPERFORMULA MUSIC</h1>
+    <div class="hitl-tag">Hybrid Media • Human Production • HITL</div>
 </header>
 
 <div class="container">
     
     <div class="status-tag" style="text-align: center; width: 100%;">AVAILABLE NOW</div>
-    <section class="release-hero">
-        <div class="album-art">
+    <section class="hero-section">
+        <div class="image-wrap">
             <img src="relevation_cover.jpg" alt="Mad Influence - Relevation">
         </div>
-        <div class="release-info">
+        <div class="content-info">
             <h1>MAD INFLUENCE</h1>
             <h2>RELEVATION [ALBUM]</h2>
             
@@ -166,6 +208,21 @@
             
             <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="btn" style="margin-top:15px; width:100%; box-sizing: border-box; background: rgba(240, 50, 255, 0.1);" target="_blank">
                 <i class="fas fa-external-link-alt"></i> Official Landing Page
+            </a>
+        </div>
+    </section>
+
+    <h2 class="section-title">Official Store</h2>
+    <section class="hero-section merch-section">
+        <div class="image-wrap">
+            <img src="merch_promo.jpg" alt="Hyperformula Merch" class="merch-placeholder">
+        </div>
+        <div class="content-info">
+            <h1>MERCHANDISE</h1>
+            <h2>Premium label apparel & physical releases</h2>
+            
+            <a href="https://kwz3nw-hj.myshopify.com" class="btn btn-massive" target="_blank" style="width:100%; box-sizing: border-box; display:block;">
+                <i class="fas fa-shopping-cart"></i> ENTER SHOPIFY STORE
             </a>
         </div>
     </section>
@@ -206,8 +263,11 @@
 </div>
 
 <footer>
-    <p style="font-family: 'Syncopate'; font-size: 0.7rem; color: #666; margin-bottom: 20px;">HYBRID MEDIA • HUMAN PRODUCTION • HITL</p>
-    <a href="mailto:buffthenerfadmin@protonmail.com" class="contact-email">buffthenerfadmin@protonmail.com</a>
+    <a href="mailto:buffthenerfadmin@protonmail.com" class="contact-email"><i class="fas fa-envelope"></i> buffthenerfadmin@protonmail.com</a>
+</footer>
+
+</body>
+</html>
 </footer>
 
 </body>
