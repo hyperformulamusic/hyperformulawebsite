@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyperformula Music | Relevation</title>
+    <title>Hyperformula Music | RELEVATION OUT NOW</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --neon-purple: #f032ff; /* Bright Fuchsia */
-            --deep-purple: #3a003d;
+            --neon-purple: #f032ff;
+            --deep-purple: #1a001c;
             --bg-black: #050505;
             --text-main: #ffffff;
             --text-dim: #b0b0b0;
@@ -25,199 +25,189 @@
             line-height: 1.6;
         }
 
-        /* Glitchy/Tech Header */
         header {
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
-            background: radial-gradient(circle at center, var(--deep-purple) 0%, var(--bg-black) 70%);
+            background: radial-gradient(circle at center, var(--deep-purple) 0%, var(--bg-black) 100%);
         }
 
         .label-name {
             font-family: 'Syncopate', sans-serif;
-            font-size: clamp(2rem, 8vw, 4rem);
+            font-size: clamp(1.5rem, 6vw, 3.5rem);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
             margin: 0;
             color: var(--neon-purple);
-            text-shadow: 0 0 20px rgba(240, 50, 255, 0.6);
-        }
-
-        .hitl-tag {
-            font-size: 0.75rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-top: 15px;
-            font-weight: 300;
+            text-shadow: 0 0 20px rgba(240, 50, 255, 0.4);
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
-        /* Main Artist Card */
-        .artist-showcase {
+        /* MAIN RELEASE SECTION */
+        .release-hero {
             display: flex;
             flex-wrap: wrap;
-            gap: 60px;
+            gap: 40px;
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(240, 50, 255, 0.15);
-            padding: 50px;
-            border-radius: 5px; /* Sharp, modern edges */
+            border: 1px solid rgba(240, 50, 255, 0.2);
+            padding: 40px;
+            margin-bottom: 60px;
             align-items: center;
-            position: relative;
-            overflow: hidden;
+            border-left: 5px solid var(--neon-purple);
         }
 
-        .artist-showcase::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 4px; height: 100%;
-            background: var(--neon-purple);
-        }
-
-        .album-art-wrap {
+        .album-art {
             flex: 1;
             min-width: 300px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
         }
 
-        .album-art-wrap img {
-            width: 100%;
-            display: block;
-            filter: grayscale(20%);
-            transition: filter 0.5s ease;
-        }
+        .album-art img { width: 100%; display: block; border: 1px solid rgba(255,255,255,0.1); }
 
-        .album-art-wrap img:hover {
-            filter: grayscale(0%);
-        }
+        .release-info { flex: 1.5; min-width: 300px; }
 
-        .content-wrap {
-            flex: 1.2;
-            min-width: 300px;
-        }
-
-        .artist-name {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 2.5rem;
-            margin: 0;
-            color: #fff;
-        }
-
-        .album-meta {
+        .status-tag {
             color: var(--neon-purple);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 10px 0 25px;
-            text-transform: uppercase;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
         }
 
-        /* Buttons & Interaction */
-        .btn-preorder {
-            display: inline-block;
-            background: transparent;
-            color: var(--neon-purple);
-            border: 2px solid var(--neon-purple);
-            padding: 15px 35px;
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.8rem;
+        .release-info h1 { font-family: 'Syncopate', sans-serif; font-size: 2.2rem; margin: 0; }
+        .release-info h2 { font-size: 1.2rem; color: var(--text-dim); margin: 5px 0 25px; font-weight: 300; }
+
+        /* BUTTONS */
+        .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border: 1px solid var(--neon-purple);
+            color: white;
             text-decoration: none;
-            font-weight: 700;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.7rem;
             transition: all 0.3s;
-            margin-bottom: 30px;
-        }
-
-        .btn-preorder:hover {
-            background: var(--neon-purple);
-            color: #000;
-            box-shadow: 0 0 30px var(--neon-purple);
-        }
-
-        .social-icons a {
-            color: var(--text-dim);
-            font-size: 1.8rem;
-            margin-right: 25px;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: var(--neon-purple);
-        }
-
-        /* Info Section */
-        .label-bio {
+            text-transform: uppercase;
             text-align: center;
-            margin: 80px auto;
-            max-width: 700px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 40px;
         }
 
-        .label-bio p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: var(--text-dim);
+        .btn i { margin-right: 10px; font-size: 1.1rem; }
+        .btn:hover { background: var(--neon-purple); color: black; box-shadow: 0 0 15px var(--neon-purple); }
+
+        /* SECTION HEADERS */
+        .section-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 5px;
+            color: var(--neon-purple);
+            margin: 60px 0 30px;
+            text-transform: uppercase;
+            text-align: center;
         }
+
+        /* ARTIST & SOCIAL GRIDS */
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+        .card {
+            background: rgba(255,255,255,0.03);
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: border 0.3s;
+        }
+
+        .card:hover { border: 1px solid var(--neon-purple); }
+
+        .card h3 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; margin-bottom: 20px; }
 
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: #444;
-            text-transform: uppercase;
+            padding: 80px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 60px;
         }
 
-        @media (max-width: 768px) {
-            .artist-showcase { padding: 30px; text-align: center; }
-            .social-icons { margin-top: 20px; }
-            .artist-name { font-size: 1.8rem; }
-        }
+        .contact-email { color: var(--neon-purple); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; }
+
     </style>
 </head>
 <body>
 
 <header>
     <h1 class="label-name">HYPERFORMULA</h1>
-    <div class="hitl-tag">Human Production • Hybrid Media • DJ Mixes</div>
 </header>
 
 <div class="container">
-    <section class="artist-showcase">
-        <div class="album-art-wrap">
-            <img src="relevation_cover.jpg.PNG" alt="Mad Influence - Relevation Cover">
+    
+    <div class="status-tag" style="text-align: center; width: 100%;">AVAILABLE NOW</div>
+    <section class="release-hero">
+        <div class="album-art">
+            <img src="relevation_cover.jpg" alt="Mad Influence - Relevation">
         </div>
-
-        <div class="content-wrap">
-            <h2 class="artist-name">Mad Influence</h2>
-            <div class="album-meta">New Album: Relevation • April 3rd 2026</div>
+        <div class="release-info">
+            <h1>MAD INFLUENCE</h1>
+            <h2>RELEVATION [ALBUM]</h2>
             
-            <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="btn-preorder">Pre-Order Now</a>
-
-            <div class="social-icons">
-                <a href="https://open.spotify.com/artist/4VVObHZcmGMuDQIeE4Eor3" target="_blank"><i class="fab fa-spotify"></i></a>
-                <a href="https://soundcloud.com/madinfluence" target="_blank"><i class="fab fa-soundcloud"></i></a>
-                <a href="https://soundcloud.com/hyperformulamusic" target="_blank" title="Label Soundcloud"><i class="fas fa-compact-disc"></i></a>
+            <div class="btn-grid">
+                <a href="https://open.spotify.com/album/2zmjGqhZowg6xXfS2IxjkN?si=oguOBf1TSN2QrlsKju4nRA" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+                <a href="https://music.apple.com/us/album/relevation/1886494958" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple Music</a>
+                <a href="https://www.youtube.com/channel/UCuVKBakF0T-aV-2iMOrwLOA" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
             </div>
+            
+            <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="btn" style="margin-top:15px; width:100%; box-sizing: border-box; background: rgba(240, 50, 255, 0.1);" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Official Landing Page
+            </a>
         </div>
     </section>
 
-    <section class="label-bio">
-        <p>
-            Hyperformula Music is an Indie Label that focuses on Creative Turntablism, Human Music and Hybrid Media Production (HITL). 
-        </p>
-        <a href="mailto:buffthenerfadmin@protonmail.com" style="color:var(--neon-purple); text-decoration: none; font-size: 0.9rem;">Contact: buffthenerfadmin@protonmail.com</a>
-    </section>
+    <h2 class="section-title">Featured Artists</h2>
+    <div class="grid-layout">
+        <div class="card">
+            <h3>Mad Influence</h3>
+            <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank">View Profile</a>
+        </div>
+        <div class="card">
+            <h3>Masayukii</h3>
+            <a href="https://soundcloud.com/masayukiimusic" class="btn" target="_blank">View Profile</a>
+        </div>
+        <div class="card">
+            <h3>Absynthetix</h3>
+            <a href="https://soundcloud.com/absynthetix" class="btn" target="_blank">View Profile</a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Support Us Directly</h2>
+    <div class="grid-layout">
+        <a href="https://cash.app/$JMadinfluence" class="btn" target="_blank">
+            <i class="fas fa-dollar-sign"></i> CashApp: $JMadinfluence
+        </a>
+        <a href="https://www.paypal.com/paypalme/jjmjr" class="btn" target="_blank">
+            <i class="fab fa-paypal"></i> PayPal: Paypal@jjmjr
+        </a>
+    </div>
+
+    <h2 class="section-title">Connect</h2>
+    <div class="grid-layout">
+        <a href="https://www.instagram.com/hyperformulamusic/" class="btn" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.youtube.com/@Hyperformula" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://soundcloud.com/hyperformulamusic" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> SoundCloud</a>
+    </div>
+
 </div>
 
 <footer>
-    &copy; 2026 Hyperformula Music // NC USA
+    <p style="font-family: 'Syncopate'; font-size: 0.7rem; color: #666; margin-bottom: 20px;">HYBRID MEDIA • HUMAN PRODUCTION • HITL</p>
+    <a href="mailto:buffthenerfadmin@protonmail.com" class="contact-email">buffthenerfadmin@protonmail.com</a>
 </footer>
 
 </body>
