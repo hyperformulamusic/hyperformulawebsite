@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyperformula Music | RELEVATION OUT NOW</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;600;700&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -23,21 +23,20 @@
             font-family: 'Outfit', sans-serif;
             margin: 0;
             line-height: 1.6;
-            font-weight: 300;
         }
 
         header {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             background: radial-gradient(circle at center, var(--deep-purple) 0%, var(--bg-black) 100%);
         }
 
         .label-name {
             font-family: 'Syncopate', sans-serif;
-            font-size: clamp(1.2rem, 5vw, 3rem);
+            font-size: clamp(1.2rem, 5vw, 2.8rem);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 6px;
+            letter-spacing: 8px;
             margin: 0;
             color: var(--neon-purple);
             text-shadow: 0 0 15px rgba(240, 50, 255, 0.4);
@@ -46,72 +45,62 @@
         .hitl-tag {
             color: var(--text-dim);
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
             margin-top: 15px;
             text-transform: uppercase;
+            opacity: 0.7;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* HERO SECTIONS (RELEASE & MERCH) */
-        .hero-section {
+        /* SECTION LAYOUT */
+        .hero-block {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(240, 50, 255, 0.2);
+            border: 1px solid rgba(240, 50, 255, 0.15);
             padding: 40px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             align-items: center;
-            border-left: 5px solid var(--neon-purple);
+            border-left: 4px solid var(--neon-purple);
         }
 
-        .merch-section {
-            border-left: 5px solid #ffffff;
-            border-right: 5px solid var(--neon-purple);
-        }
+        .merch-block { border-left: 4px solid #ffffff; }
 
-        .image-wrap {
+        .img-container {
             flex: 1;
             min-width: 300px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            box-shadow: 0 0 40px rgba(0,0,0,0.9);
         }
 
-        .image-wrap img { 
-            width: 100%; 
-            display: block; 
-            border: 1px solid rgba(255,255,255,0.1); 
+        .img-container img {
+            width: 100%;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Merch placeholder dashed line */
-        .merch-placeholder {
-            border: 1px dashed rgba(240, 50, 255, 0.5) !important;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        .merch-placeholder:hover { opacity: 1; }
+        .info-content { flex: 1.4; min-width: 300px; }
 
-        .content-info { flex: 1.5; min-width: 300px; }
-
-        .status-tag {
+        .tagline {
             color: var(--neon-purple);
             font-family: 'Syncopate', sans-serif;
             font-size: 0.7rem;
             letter-spacing: 3px;
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
         }
 
-        .content-info h1 { font-family: 'Syncopate', sans-serif; font-size: 2rem; margin: 0; letter-spacing: 1px; }
-        .content-info h2 { font-size: 1.1rem; color: var(--text-dim); margin: 5px 0 25px; font-weight: 400; }
+        .info-content h1 { font-family: 'Syncopate', sans-serif; font-size: 1.8rem; margin: 0; text-transform: uppercase; }
+        .info-content h2 { font-size: 1.1rem; color: var(--text-dim); margin: 5px 0 25px; font-weight: 300; }
 
         /* BUTTONS */
-        .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
 
         .btn {
             display: flex;
@@ -122,60 +111,55 @@
             color: white;
             text-decoration: none;
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: 0.3s ease;
             text-transform: uppercase;
-            text-align: center;
         }
 
-        .btn i { margin-right: 10px; font-size: 1.1rem; }
-        .btn:hover { background: var(--neon-purple); color: black; box-shadow: 0 0 15px var(--neon-purple); }
+        .btn:hover { background: var(--neon-purple); color: black; box-shadow: 0 0 20px var(--neon-purple); }
 
-        .btn-massive {
+        .btn-shop {
             background: var(--neon-purple);
             color: black;
-            font-size: 1rem;
+            font-size: 0.9rem;
             padding: 18px;
-            border: none;
-            box-shadow: 0 0 20px rgba(240, 50, 255, 0.3);
+            width: 100%;
+            margin-top: 10px;
         }
-        .btn-massive:hover { box-shadow: 0 0 30px rgba(240, 50, 255, 0.8); background: #ffffff; color: black; }
 
-        /* SECTION HEADERS */
+        .btn-shop:hover { background: #ffffff; color: black; box-shadow: 0 0 25px #ffffff; }
+
+        /* GRID SECTIONS */
         .section-title {
             font-family: 'Syncopate', sans-serif;
-            font-size: 1rem;
-            letter-spacing: 5px;
+            font-size: 0.9rem;
+            letter-spacing: 6px;
             color: var(--neon-purple);
-            margin: 60px 0 30px;
+            margin: 80px 0 30px;
             text-transform: uppercase;
             text-align: center;
-            font-weight: 600;
         }
 
-        /* ARTIST & SOCIAL GRIDS */
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 
         .card {
             background: rgba(255,255,255,0.02);
-            padding: 25px;
+            padding: 30px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: border 0.3s;
         }
 
-        .card:hover { border: 1px solid var(--neon-purple); }
-        .card h3 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; }
+        .card h3 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; margin-bottom: 20px; }
 
         footer {
             text-align: center;
-            padding: 80px 20px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            margin-top: 60px;
+            padding: 100px 20px;
+            opacity: 0.6;
         }
 
-        .contact-email { color: var(--neon-purple); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; }
+        .email-link { color: var(--neon-purple); text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; }
+
     </style>
 </head>
 <body>
@@ -187,80 +171,74 @@
 
 <div class="container">
     
-    <div class="status-tag" style="text-align: center; width: 100%;">AVAILABLE NOW</div>
-    <section class="hero-section">
-        <div class="image-wrap">
-            <img src="relevation_cover.png" alt="Mad Influence - Relevation">
+    <section class="hero-block">
+        <div class="img-container">
+            <img src="relevation_cover.png" alt="Mad Influence Relevation">
         </div>
-        <div class="content-info">
+        <div class="info-content">
+            <span class="tagline">OUT NOW // APRIL 3 2026</span>
             <h1>MAD INFLUENCE</h1>
-            <h2>RELEVATION [ALBUM]</h2>
+            <h2>RELEVATION [LP]</h2>
             
             <div class="btn-grid">
                 <a href="https://open.spotify.com/album/2zmjGqhZowg6xXfS2IxjkN?si=oguOBf1TSN2QrlsKju4nRA" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-                <a href="https://music.apple.com/us/album/relevation/1886494958" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple Music</a>
+                <a href="https://music.apple.com/us/album/relevation/1886494958" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple</a>
                 <a href="https://www.youtube.com/channel/UCuVKBakF0T-aV-2iMOrwLOA" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
                 <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
             </div>
-            
-            <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="btn" style="margin-top:15px; width:100%; box-sizing: border-box; background: rgba(240, 50, 255, 0.1);" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Official Landing Page
-            </a>
+            <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="btn" style="margin-top:12px; border-color: rgba(255,255,255,0.2);" target="_blank">View Release Page</a>
         </div>
     </section>
 
     <h2 class="section-title">Official Store</h2>
-    <section class="hero-section merch-section">
-        <div class="image-wrap">
-            <img src="merch_promo.png" alt="Hyperformula Merch" class="merch-placeholder">
+    <section class="hero-block merch-block">
+        <div class="img-container">
+            <img src="merch_promo.png" alt="Hyperformula Merch">
         </div>
-        <div class="content-info">
-            <h1>MERCHANDISE</h1>
-            <h2>Premium label apparel & physical releases</h2>
-            
-            <a href="https://kwz3nw-hj.myshopify.com" class="btn btn-massive" target="_blank" style="width:100%; box-sizing: border-box; display:block;">
-                <i class="fas fa-shopping-cart"></i> ENTER SHOPIFY STORE
+        <div class="info-content">
+            <h1>LABEL APPAREL</h1>
+            <h2>Premium Quality Merch Drops</h2>
+            <a href="https://kwz3nw-hj.myshopify.com" class="btn btn-shop" target="_blank">
+                <i class="fas fa-shopping-cart"></i> VISIT STORE
             </a>
         </div>
     </section>
 
-    <h2 class="section-title">Featured Artists</h2>
-    <div class="grid-layout">
+    <h2 class="section-title">Artists</h2>
+    <div class="grid">
         <div class="card">
             <h3>Mad Influence</h3>
-            <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank">View Profile</a>
+            <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank">Listen</a>
         </div>
         <div class="card">
             <h3>Masayukii</h3>
-            <a href="https://soundcloud.com/masayukiimusic" class="btn" target="_blank">View Profile</a>
+            <a href="https://soundcloud.com/masayukiimusic" class="btn" target="_blank">Listen</a>
         </div>
         <div class="card">
             <h3>Absynthetix</h3>
-            <a href="https://soundcloud.com/absynthetix" class="btn" target="_blank">View Profile</a>
+            <a href="https://soundcloud.com/absynthetix" class="btn" target="_blank">Listen</a>
         </div>
     </div>
 
-    <h2 class="section-title">Support Us Directly</h2>
-    <div class="grid-layout">
-        <a href="https://cash.app/$JMadinfluence" class="btn" target="_blank">
-            <i class="fas fa-dollar-sign"></i> CashApp: $JMadinfluence
-        </a>
-        <a href="https://www.paypal.com/paypalme/jjmjr" class="btn" target="_blank">
-            <i class="fab fa-paypal"></i> PayPal: Paypal@jjmjr
-        </a>
+    <h2 class="section-title">Direct Support</h2>
+    <div class="grid">
+        <a href="https://cash.app/$JMadinfluence" class="btn" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp</a>
+        <a href="https://www.paypal.com/paypalme/jjmjr" class="btn" target="_blank"><i class="fab fa-paypal"></i> PayPal</a>
     </div>
 
     <h2 class="section-title">Connect</h2>
-    <div class="grid-layout">
+    <div class="grid">
         <a href="https://www.instagram.com/hyperformulamusic/" class="btn" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         <a href="https://www.youtube.com/@Hyperformula" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://soundcloud.com/hyperformulamusic" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> SoundCloud</a>
+        <a href="https://soundcloud.com/hyperformulamusic" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
     </div>
 
 </div>
 
 <footer>
-    <a href="mailto:buffthenerfadmin@protonmail.com" class="contact-email"><i class="fas fa-envelope"></i> buffthenerfadmin@protonmail.com</a>
+    <a href="mailto:buffthenerfadmin@protonmail.com" class="email-link">
+        <i class="fas fa-envelope"></i> buffthenerfadmin@protonmail.com
+    </a>
 </footer>
 
 </body>
