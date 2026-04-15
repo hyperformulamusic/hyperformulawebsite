@@ -73,17 +73,13 @@
             width: 100%;
         }
 
-        /* Desktop specific sticky sidebar */
         @media (min-width: 1024px) {
-            .sidebar {
-                position: sticky;
-                top: 20px;
-            }
+            .sidebar { position: sticky; top: 20px; }
         }
 
         .hero-block {
             display: flex;
-            flex-direction: column; /* Stack on mobile by default */
+            flex-direction: column;
             gap: 25px;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(0, 255, 213, 0.15);
@@ -92,7 +88,6 @@
             border-left: 4px solid var(--neon-aqua);
         }
 
-        /* Side-by-side for desktop */
         @media (min-width: 768px) {
             .hero-block {
                 flex-direction: row;
@@ -101,20 +96,16 @@
             }
         }
 
-        .merch-block { border-left: 4px solid #ffffff; }
-
         .img-container { flex: 1; width: 100%; max-width: 450px; margin: 0 auto; box-shadow: 0 0 40px rgba(0,0,0,0.9); }
         .img-container img { width: 100%; height: auto; display: block; border: 1px solid rgba(255,255,255,0.05); }
 
         .info-content { flex: 1.4; width: 100%; }
 
-        .tagline {
-            color: var(--neon-aqua);
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            display: block;
+        /* SoundCloud Container Style */
+        .sc-embed-wrapper {
+            margin: 20px 0;
+            border: 1px solid rgba(0, 255, 213, 0.2);
+            background: #000;
         }
 
         .info-content h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(1.3rem, 4vw, 1.8rem); margin: 0; text-transform: uppercase; }
@@ -143,17 +134,7 @@
         }
 
         .btn i { margin-right: 8px; }
-
         .btn:hover { background: var(--neon-aqua); color: black; box-shadow: 0 0 20px var(--neon-aqua); }
-
-        .btn-shop {
-            background: var(--neon-aqua);
-            color: black;
-            font-size: 0.8rem;
-            padding: 15px;
-            width: 100%;
-            margin-top: 10px;
-        }
 
         .section-title {
             font-family: 'Syncopate', sans-serif;
@@ -214,6 +195,12 @@
                 <h1>MY STAR'S SOUL</h1>
                 <h2>MY STAR'S SOUL [LP]</h2>
                 
+                <div class="sc-embed-wrapper">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2222332256&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/hyperformulamusic" title="Hyperformula Music" target="_blank" style="color: #cccccc; text-decoration: none;">Hyperformula Music</a> · <a href="https://soundcloud.com/hyperformulamusic/sets/hyperformula-music-showcase" title="Hyperformula Music Showcase" target="_blank" style="color: #cccccc; text-decoration: none;">Hyperformula Music Showcase</a></div>&color=%2300ffd5&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+                    </iframe>
+                </div>
+                
                 <div class="btn-grid">
                     <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
                     <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple</a>
@@ -268,14 +255,14 @@
 
     <aside class="sidebar">
         <h2 class="section-title">Official Store</h2>
-        <section class="hero-block merch-block" style="flex-direction: column; text-align: center;">
+        <section class="hero-block merch-block" style="flex-direction: column; text-align: center; padding: 20px;">
             <div class="img-container">
                 <img src="merch_promo.png" alt="Hyperformula Merch">
             </div>
             <div class="info-content">
                 <h1 style="font-size: 1.2rem; margin-top: 15px;">LABEL APPAREL</h1>
                 <h2 style="font-size: 0.8rem;">Premium Quality Merch Drops</h2>
-                <a href="https://kwz3nw-hj.myshopify.com" class="btn btn-shop" target="_blank">
+                <a href="https://kwz3nw-hj.myshopify.com" class="btn btn-shop" target="_blank" style="background: var(--neon-aqua); color: black; font-size: 0.8rem; padding: 15px; width: 100%; display: block; text-decoration: none;">
                     <i class="fas fa-shopping-cart"></i> VISIT STORE
                 </a>
             </div>
