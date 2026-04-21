@@ -27,7 +27,7 @@
         }
 
         header {
-            padding: 60px 20px;
+            padding: clamp(40px, 8vw, 60px) 20px;
             text-align: center;
             background: radial-gradient(circle at center, var(--deep-aqua) 0%, var(--bg-black) 100%);
         }
@@ -61,20 +61,14 @@
 
         .layout-wrapper {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 30px;
-            align-items: flex-start;
-        }
-
-        .main-content { flex: 1; min-width: 300px; width: 100%; }
-
-        .sidebar {
-            flex: 0 0 320px;
-            width: 100%;
         }
 
         @media (min-width: 1024px) {
-            .sidebar { position: sticky; top: 20px; }
+            .layout-wrapper { flex-direction: row; align-items: flex-start; }
+            .main-content { flex: 1; }
+            .sidebar { flex: 0 0 320px; position: sticky; top: 20px; }
         }
 
         .hero-block {
@@ -89,11 +83,7 @@
         }
 
         @media (min-width: 768px) {
-            .hero-block {
-                flex-direction: row;
-                padding: 40px;
-                align-items: center;
-            }
+            .hero-block { flex-direction: row; padding: 40px; align-items: center; }
         }
 
         .img-container { flex: 1; width: 100%; max-width: 450px; margin: 0 auto; box-shadow: 0 0 40px rgba(0,0,0,0.9); }
@@ -112,28 +102,28 @@
 
         .btn-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
-            gap: 10px; 
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); 
+            gap: 8px; 
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 8px;
+            padding: 10px 5px;
             border: 1px solid var(--neon-aqua);
             color: white;
             text-decoration: none;
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 600;
             transition: 0.3s ease;
             text-transform: uppercase;
             text-align: center;
         }
 
-        .btn i { margin-right: 8px; }
-        .btn:hover { background: var(--neon-aqua); color: black; box-shadow: 0 0 20px var(--neon-aqua); }
+        .btn i { margin-right: 6px; }
+        .btn:hover { background: var(--neon-aqua); color: black; box-shadow: 0 0 15px var(--neon-aqua); }
 
         .section-title {
             font-family: 'Syncopate', sans-serif;
@@ -147,7 +137,7 @@
 
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
             gap: 15px; 
         }
 
@@ -208,15 +198,13 @@
                 
                 <div class="sc-embed-wrapper">
                     <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2218900229&color=%2300ffd5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                    <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100; padding: 5px;">
-                        <a href="https://soundcloud.com/hyperformulamusic" title="Hyperformula Music" target="_blank" style="color: #cccccc; text-decoration: none;">Hyperformula Music</a> · 
-                        <a href="https://soundcloud.com/hyperformulamusic/sets/artist-my-stars-soul" title="Artist - My Star's Soul" target="_blank" style="color: #cccccc; text-decoration: none;">Artist - My Star's Soul</a>
-                    </div>
                 </div>
                 
                 <div class="btn-grid">
                     <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
                     <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple</a>
+                    <a href="https://www.pandora.com/artist/my-stars-soul/AR775fdzn5zjgdJ" class="btn" target="_blank"><i class="fas fa-p"></i> Pandora</a>
+                    <a href="https://music.amazon.co.uk/albums/B0GWZY5WS3" class="btn" target="_blank"><i class="fab fa-amazon"></i> Amazon</a>
                     <a href="https://soundcloud.com/h3llbind3r" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
                     <a href="https://youtube.com/shorts/yrepRN4vOW8" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
                 </div>
@@ -228,16 +216,18 @@
 
         <section class="hero-block">
             <div class="img-container">
-               <img src="relevation_cover.PNG" alt="Mad Influence Relevation">
+               <img src="relevation_cover.png" alt="Mad Influence Relevation">
             </div>
             <div class="info-content">
-                <span class="tagline">OUT NOW // APRIL 3 2026</span>
+                <span class="tagline">OUT NOW</span>
                 <h1>MAD INFLUENCE</h1>
                 <h2>RELEVATION [LP]</h2>
                 
                 <div class="btn-grid">
                     <a href="https://open.spotify.com/album/7u793Wv1q4mKOnr0wB188M" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
                     <a href="https://music.apple.com/us/album/relevation/1886494958" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple</a>
+                    <a href="https://www.pandora.com/artist/mad-influence/ARdx9rhX64K2KxV" class="btn" target="_blank"><i class="fas fa-p"></i> Pandora</a>
+                    <a href="https://music.amazon.com.mx/artists/B00A8AKIVS/mad-influence" class="btn" target="_blank"><i class="fab fa-amazon"></i> Amazon</a>
                     <a href="https://www.youtube.com/channel/UCuVKBakF0T-aV-2iMOrwLOA" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
                     <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
                 </div>
@@ -262,7 +252,7 @@
             <div class="card">
                 <h3>Ill Tac</h3>
                 <span class="genre-tag">Rap, Hip-Hop</span>
-                <a href="https://open.spotify.com/artist/5GXkUn6wQJkEbS2OAW2as6" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+                <a href="https://open.spotify.com/artist/5GXkUn6wQJkEbS2OAW2as6" class="btn" target="_blank">Listen</a>
             </div>
 
             <div class="card">
