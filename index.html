@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyperformula Music | Artists & Releases</title>
+    <title>Hyperformula Music | Home</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -85,7 +85,6 @@
 
         .upcoming-release {
             border: 1px solid var(--neon-aqua);
-            border-left: 4px solid var(--neon-aqua);
             background: linear-gradient(to right, rgba(0, 255, 213, 0.05), transparent);
         }
 
@@ -98,11 +97,7 @@
 
         .info-content { flex: 1.4; width: 100%; }
 
-        .sc-embed-wrapper {
-            margin: 20px 0;
-            border: 1px solid rgba(0, 255, 213, 0.2);
-            background: #000;
-        }
+        .sc-embed-wrapper { margin: 20px 0; border: 1px solid rgba(0, 255, 213, 0.2); background: #000; }
 
         .info-content h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(1.3rem, 4vw, 1.8rem); margin: 0; text-transform: uppercase; }
         .info-content h2 { font-size: 1rem; color: var(--text-dim); margin: 5px 0 20px; font-weight: 300; }
@@ -116,16 +111,6 @@
             padding: 2px 10px;
             font-weight: 900;
             margin-bottom: 10px;
-        }
-
-        .pre-save-tag {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 255, 213, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 255, 213, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 255, 213, 0); }
         }
 
         .btn-grid { 
@@ -147,47 +132,47 @@
             font-weight: 600;
             transition: 0.3s ease;
             text-transform: uppercase;
-            text-align: center;
         }
 
-        .btn i { margin-right: 6px; }
         .btn:hover { background: var(--neon-aqua); color: black; box-shadow: 0 0 15px var(--neon-aqua); }
+
+        .artist-nav-btn {
+            display: block;
+            width: 100%;
+            padding: 25px;
+            margin-bottom: 40px;
+            background: transparent;
+            border: 2px solid var(--neon-aqua);
+            color: var(--neon-aqua);
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 5px;
+            transition: 0.4s;
+        }
+
+        .artist-nav-btn:hover {
+            background: var(--neon-aqua);
+            color: #000;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .sidebar-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(0, 255, 213, 0.15);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
         .section-title {
             font-family: 'Syncopate', sans-serif;
             font-size: 0.8rem;
             letter-spacing: 5px;
             color: var(--neon-aqua);
-            margin: 40px 0 20px;
+            margin: 0 0 20px;
             text-transform: uppercase;
-            text-align: center;
-        }
-
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-            gap: 15px; 
-        }
-
-        .card {
-            background: rgba(255,255,255,0.02);
-            padding: 20px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h3 { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; margin-bottom: 5px; color: var(--neon-aqua); }
-        
-        .genre-tag {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dim);
-            margin-bottom: 15px;
-            font-weight: 600;
         }
 
         .spanish-note {
@@ -200,8 +185,8 @@
             line-height: 1.4;
         }
 
-        footer { text-align: center; padding: 60px 20px 40px; opacity: 0.6; }
-        .email-link { color: var(--neon-aqua); text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; word-break: break-all; }
+        footer { text-align: center; padding: 60px 20px; opacity: 0.6; }
+        .email-link { color: var(--neon-aqua); text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; }
 
     </style>
 </head>
@@ -213,23 +198,26 @@
 </header>
 
 <div class="container layout-wrapper">
-    
     <main class="main-content">
+        <!-- LINK TO ARTISTS PAGE -->
+        <a href="artists.html" target="_blank" class="artist-nav-btn">ARTIST LINKS</a>
+
+        <!-- FEATURED RELEASE: MEZMERIZED (UPDATED PLAYER) -->
         <section class="hero-block upcoming-release">
             <div class="img-container">
                 <img src="Mezmerized_promo.jpg" alt="Mad Influence - Mezmerized">
             </div>
             <div class="info-content">
-                <span class="tagline pre-save-tag">COMING MAY 1ST</span>
+                <span class="tagline">COMING MAY 1ST</span>
                 <h1>MAD INFLUENCE</h1>
                 <h2>MEZMERIZED [SINGLE]</h2>
                 
                 <div class="sc-embed-wrapper">
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2309402138&color=%2300ffd5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2311739525&color=%2300ffd5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
                 </div>
                 
                 <div class="btn-grid">
-                    <a href="https://distrokid.com/hyperfollow/madinfluence/mezmerized?ref=release" class="btn" target="_blank" style="grid-column: span 2; background: var(--neon-aqua); color: #000; font-size: 0.7rem; padding: 15px;">
+                    <a href="https://distrokid.com/hyperfollow/madinfluence/mezmerized" class="btn" target="_blank" style="grid-column: span 2; background: var(--neon-aqua); color: #000; font-size: 0.7rem; padding: 15px;">
                         <i class="fas fa-clock"></i> PRE-SAVE ON DISTROKID
                     </a>
                 </div>
@@ -238,6 +226,7 @@
             </div>
         </section>
 
+        <!-- PREVIOUS RELEASES -->
         <section class="hero-block">
             <div class="img-container">
                 <img src="mystarsoul_cover.png" alt="My Star's Soul Album Cover">
@@ -253,21 +242,15 @@
                 
                 <div class="btn-grid">
                     <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-                    <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple</a>
-                    <a href="https://www.pandora.com/artist/my-stars-soul/AR775fdzn5zjgdJ" class="btn" target="_blank"><i class="fas fa-p"></i> Pandora</a>
-                    <a href="https://music.amazon.co.uk/albums/B0GWZY5WS3" class="btn" target="_blank"><i class="fab fa-amazon"></i> Amazon</a>
                     <a href="https://soundcloud.com/h3llbind3r" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
-                    <a href="https://youtube.com/shorts/yrepRN4vOW8" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
                 </div>
                 <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" style="margin-top:12px; border-color: rgba(255,255,255,0.2);" target="_blank">View Release Page</a>
-                
-                <span class="spanish-note">* El álbum ya está disponible en plataformas digitales. Pulsa la pestaña "VIEW RELEASE PAGE"</span>
             </div>
         </section>
 
         <section class="hero-block">
             <div class="img-container">
-               <img src="relevation_cover.PNG" alt="Mad Influence Relevation">
+               <img src="relevation_cover.png" alt="Mad Influence Relevation">
             </div>
             <div class="info-content">
                 <span class="tagline">OUT NOW</span>
@@ -276,98 +259,46 @@
                 
                 <div class="btn-grid">
                     <a href="http://googleusercontent.com/spotify.com/6" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-                    <a href="https://music.apple.com/us/album/relevation/1886494958" class="btn" target="_blank"><i class="fab fa-apple"></i> Apple</a>
-                    <a href="https://www.pandora.com/artist/mad-influence/ARdx9rhX64K2KxV" class="btn" target="_blank"><i class="fas fa-p"></i> Pandora</a>
-                    <a href="https://music.amazon.com.mx/artists/B00A8AKIVS/mad-influence" class="btn" target="_blank"><i class="fab fa-amazon"></i> Amazon</a>
-                    <a href="https://www.youtube.com/channel/UCuVKBakF0T-aV-2iMOrwLOA" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
                     <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
                 </div>
                 <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="btn" style="margin-top:12px; border-color: rgba(255,255,255,0.2);" target="_blank">View Release Page</a>
             </div>
         </section>
-
-        <h2 class="section-title">Artists</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>My Star's Soul</h3>
-                <span class="genre-tag">Metal, Dubstep</span>
-                <a href="https://soundcloud.com/h3llbind3r" class="btn" target="_blank">Listen</a>
-            </div>
-            
-            <div class="card">
-                <h3>Mad Influence</h3>
-                <span class="genre-tag">Drum & Bass, Multi-genre</span>
-                <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank">Listen</a>
-            </div>
-            
-            <div class="card">
-                <h3>Ill Tac</h3>
-                <span class="genre-tag">Rap, Hip-Hop</span>
-                <a href="http://googleusercontent.com/spotify.com/7" class="btn" target="_blank">Listen</a>
-            </div>
-
-            <div class="card">
-                <h3>Masayukii</h3>
-                <span class="genre-tag">EDM, Bass Music</span>
-                <a href="https://soundcloud.com/masayukiimusic" class="btn" target="_blank">Listen</a>
-            </div>
-
-            <div class="card">
-                <h3>Absynthetix</h3>
-                <span class="genre-tag">Drum & Bass, Experimental</span>
-                <a href="https://soundcloud.com/absynthetix" class="btn" target="_blank">Listen</a>
-            </div>
-
-            <div class="card">
-                <h3>TH3 HOT3L</h3>
-                <span class="genre-tag">Trap, Grime</span>
-                <a href="http://googleusercontent.com/spotify.com/8" class="btn" target="_blank">Listen</a>
-            </div>
-
-            <div class="card">
-                <h3>DJ MIXES</h3>
-                <span class="genre-tag">EDM</span>
-                <a href="https://www.youtube.com/@therealmadinfluence" class="btn" target="_blank">Listen</a>
-            </div>
-        </div>
-
-        <h2 class="section-title">Connect</h2>
-        <div class="grid">
-            <a href="https://www.instagram.com/hyperformulamusic/" class="btn" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://www.tiktok.com/@hyperformula.musi" class="btn" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-            <a href="https://www.youtube.com/@Hyperformula" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://soundcloud.com/hyperformulamusic" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
-            <a href="mailto:buffthenerfadmin@protonmail.com" class="btn" target="_blank"><i class="fas fa-briefcase"></i> Biz Inquiries</a>
-        </div>
     </main>
 
     <aside class="sidebar">
-        <h2 class="section-title">Official Store</h2>
-        <section class="hero-block merch-block" style="flex-direction: column; text-align: center; padding: 20px;">
-            <div class="img-container">
-                <img src="merch_promo.png" alt="Hyperformula Merch">
+        <!-- CONSOLIDATED STORE & TIP BOX -->
+        <div class="sidebar-box">
+            <h2 class="section-title">Official Store</h2>
+            <img src="merch_promo.png" style="width: 100%; margin-bottom: 15px;" alt="Label Merch">
+            <a href="https://kwz3nw-hj.myshopify.com" class="btn" target="_blank" style="background: var(--neon-aqua); color: black; padding: 15px; margin-bottom: 20px;">
+                <i class="fas fa-shopping-cart"></i> VISIT STORE
+            </a>
+            
+            <div style="border-top: 1px solid rgba(0,255,213,0.2); padding-top: 20px;">
+                <h2 class="section-title">(Tip Us!)</h2>
+                <div class="btn-grid" style="grid-template-columns: 1fr 1fr;">
+                    <a href="https://cash.app/$JMadinfluence" class="btn" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp</a>
+                    <a href="https://www.paypal.com/paypalme/jjmjr" class="btn" target="_blank"><i class="fab fa-paypal"></i> PayPal</a>
+                </div>
             </div>
-            <div class="info-content">
-                <h1 style="font-size: 1.2rem; margin-top: 15px;">LABEL APPAREL</h1>
-                <h2 style="font-size: 0.8rem;">Premium Quality Merch Drops</h2>
-                <a href="https://kwz3nw-hj.myshopify.com" class="btn btn-shop" target="_blank" style="background: var(--neon-aqua); color: black; font-size: 0.8rem; padding: 15px; width: 100%; display: block; text-decoration: none;">
-                    <i class="fas fa-shopping-cart"></i> VISIT STORE
-                </a>
-            </div>
-        </section>
+        </div>
 
-        <h2 class="section-title">Direct Support</h2>
-        <div class="grid" style="grid-template-columns: 1fr;">
-            <a href="https://cash.app/$JMadinfluence" class="btn" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp</a>
-            <a href="https://www.paypal.com/paypalme/jjmjr" class="btn" target="_blank"><i class="fab fa-paypal"></i> PayPal</a>
+        <div class="sidebar-box">
+            <h2 class="section-title">Connect</h2>
+            <div class="btn-grid">
+                <a href="https://www.instagram.com/hyperformulamusic/" class="btn" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@hyperformula.musi" class="btn" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://www.youtube.com/@Hyperformula" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="mailto:buffthenerfadmin@protonmail.com" class="btn" target="_blank"><i class="fas fa-briefcase"></i> Biz</a>
+            </div>
         </div>
     </aside>
-
 </div>
 
 <footer>
     <a href="mailto:buffthenerfadmin@protonmail.com" class="email-link">
-        <i class="fas fa-envelope"></i> buffthenerfadmin@protonmail.com
+        <i class="fas fa-envelope"></i> BUFFTHENERFADMIN@PROTONMAIL.COM
     </a>
 </footer>
 
