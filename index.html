@@ -153,14 +153,28 @@
             text-transform: uppercase;
         }
 
-        .spanish-note {
-            font-size: 0.65rem;
+        .tabs {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 15px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0, 255, 213, 0.2);
             color: var(--text-dim);
-            margin-top: 15px;
-            display: block;
-            font-style: italic;
-            opacity: 0.8;
-            line-height: 1.4;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .tab-btn.active {
+            background: var(--neon-aqua);
+            color: black;
+            border-color: var(--neon-aqua);
         }
 
         footer { text-align: center; padding: 60px 20px; opacity: 0.6; }
@@ -177,7 +191,7 @@
 
 <div class="container layout-wrapper">
     <main class="main-content">
-        <!-- FEATURED RELEASE: MEZMERIZED -->
+        <!-- FEATURED RELEASE -->
         <section class="hero-block upcoming-release">
             <div class="img-container">
                 <img src="Mezmerized_promo.jpg" alt="Mad Influence - Mezmerized">
@@ -188,7 +202,7 @@
                 <h2>MEZMERIZED [SINGLE]</h2>
                 
                 <div class="sc-embed-wrapper">
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2311739525&color=%2300ffd5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2311739525&color=%2300ffd5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
                 </div>
                 
                 <div class="btn-grid">
@@ -196,33 +210,10 @@
                         <i class="fas fa-clock"></i> PRE-SAVE ON DISTROKID
                     </a>
                 </div>
-                
-                <span class="spanish-note">* Reserva el nuevo sencillo disponible el 1 de mayo.</span>
             </div>
         </section>
 
         <!-- PREVIOUS RELEASES -->
-        <section class="hero-block">
-            <div class="img-container">
-                <img src="mystarsoul_cover.png" alt="My Star's Soul Album Cover">
-            </div>
-            <div class="info-content">
-                <span class="tagline">OUT NOW</span>
-                <h1>MY STAR'S SOUL</h1>
-                <h2>MY STAR'S SOUL [LP]</h2>
-                
-                <div class="sc-embed-wrapper">
-                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2218900229&color=%2300ffd5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                </div>
-                
-                <div class="btn-grid">
-                    <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-                    <a href="https://soundcloud.com/h3llbind3r" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
-                </div>
-                <a href="https://distrokid.com/hyperfollow/mystarssoul/my-stars-soul?ref=release" class="btn" style="margin-top:12px; border-color: rgba(255,255,255,0.2);" target="_blank">View Release Page</a>
-            </div>
-        </section>
-
         <section class="hero-block">
             <div class="img-container">
                <img src="relevation_cover.png" alt="Mad Influence Relevation">
@@ -233,7 +224,7 @@
                 <h2>RELEVATION [LP]</h2>
                 
                 <div class="btn-grid">
-                    <a href="https://open.spotify.com/album/43YjYx89Z9Vf4lU4vRkXWq" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+                    <a href="https://open.spotify.com/artist/4VVObHZcmGMuDQIeE4Eor3?si=s8nUbdCbTqyu9paBA1diEg" class="btn" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
                     <a href="https://soundcloud.com/madinfluence" class="btn" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
                 </div>
                 <a href="https://distrokid.com/hyperfollow/madinfluence/relevation" class="btn" style="margin-top:12px; border-color: rgba(255,255,255,0.2);" target="_blank">View Release Page</a>
@@ -250,9 +241,16 @@
                 <span class="btn" style="border-color: rgba(0, 255, 213, 0.3);">ILL TAC</span>
                 <span class="btn" style="border-color: rgba(0, 255, 213, 0.3);">TH3 HOT3L</span>
                 <span class="btn" style="border-color: rgba(0, 255, 213, 0.3);">My Star's Soul</span>
-                <div style="grid-column: 1 / -1; margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                    <a href="https://www.youtube.com/@IAMHIGDON" class="btn" target="_blank" style="background: rgba(255,255,255,0.05);">HIGDON (YT)</a>
-                    <a href="https://soundcloud.com/xdevourx" class="btn" target="_blank" style="background: rgba(255,255,255,0.05);">HIGDON (SC)</a>
+                <span class="btn" style="border-color: rgba(0, 255, 213, 0.3);">HIGDON</span>
+            </div>
+            
+            <!-- TABS FOR ARTIST LINKS -->
+            <div style="margin-top: 30px; border-top: 1px solid rgba(0, 255, 213, 0.1); padding-top: 20px;">
+                <div class="tabs">
+                    <button class="tab-btn active">Artist Hub</button>
+                </div>
+                <div class="btn-grid">
+                    <a href="https://www.youtube.com/@IAMHIGDON" class="btn" target="_blank" style="grid-column: span 2;"><i class="fab fa-youtube"></i> HIGDON OFFICIAL YOUTUBE</a>
                 </div>
             </div>
         </section>
@@ -261,25 +259,15 @@
     <aside class="sidebar">
         <div class="sidebar-box">
             <h2 class="section-title">Official Store</h2>
-            <img src="merch_promo.png" style="width: 100%; margin-bottom: 15px;" alt="Label Merch">
-            <a href="https://kwz3nw-hj.myshopify.com" class="btn" target="_blank" style="background: var(--neon-aqua); color: black; padding: 15px; margin-bottom: 20px;">
+            <a href="https://kwz3nw-hj.myshopify.com" class="btn" target="_blank" style="background: var(--neon-aqua); color: black; padding: 15px;">
                 <i class="fas fa-shopping-cart"></i> VISIT STORE
             </a>
-            
-            <div style="border-top: 1px solid rgba(0,255,213,0.2); padding-top: 20px;">
-                <h2 class="section-title">(Tip Us!)</h2>
-                <div class="btn-grid" style="grid-template-columns: 1fr 1fr;">
-                    <a href="https://cash.app/$JMadinfluence" class="btn" target="_blank"><i class="fas fa-dollar-sign"></i> CashApp</a>
-                    <a href="https://www.paypal.com/paypalme/jjmjr" class="btn" target="_blank"><i class="fab fa-paypal"></i> PayPal</a>
-                </div>
-            </div>
         </div>
 
         <div class="sidebar-box">
             <h2 class="section-title">Connect</h2>
             <div class="btn-grid">
                 <a href="https://www.instagram.com/hyperformulamusic/" class="btn" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="https://www.tiktok.com/@hyperformula.musi" class="btn" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
                 <a href="https://www.youtube.com/@Hyperformula" class="btn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
                 <a href="mailto:buffthenerfadmin@protonmail.com" class="btn" target="_blank"><i class="fas fa-briefcase"></i> Biz</a>
             </div>
