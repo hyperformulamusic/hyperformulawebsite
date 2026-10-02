@@ -8,14 +8,12 @@
 
     <meta
         name="description"
-        content="Hyperformula Music — Creative Turntablism, Human & Hybrid Music Production."
+        content="HYPERFORMULA MUSIC — Creative Turntablism, Human & Hybrid Music Production."
     >
 
     <meta name="theme-color" content="#050505">
 
-    <!-- =========================================
-         GOOGLE FONTS
-    ========================================== -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -24,47 +22,36 @@
         rel="stylesheet"
     >
 
-    <!-- =========================================
-         FONT AWESOME
-    ========================================== -->
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-    <!-- =========================================
-         QR CODE GENERATOR
-    ========================================== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-
     <style>
 
         /* =========================================
-           ROOT VARIABLES
-        ========================================== */
+           VARIABLES
+        ========================================= */
 
         :root {
             --aqua: #00ffd5;
-            --aqua-dark: #001a14;
-
+            --aqua-bright: #65ffea;
             --black: #050505;
             --panel: #0b0b0b;
-            --panel-2: #101010;
-
+            --panel-light: #111111;
             --white: #f5f5f5;
-            --dim: #b0b0b0;
-
-            --border: rgba(0, 255, 213, 0.24);
-            --glow: rgba(0, 255, 213, 0.40);
-
-            --max-width: 1240px;
+            --dim: #a9a9a9;
+            --border: rgba(0,255,213,0.25);
+            --border-strong: rgba(0,255,213,0.50);
+            --glow: rgba(0,255,213,0.35);
+            --max-width: 1180px;
         }
 
 
         /* =========================================
            RESET
-        ========================================== */
+        ========================================= */
 
         * {
             margin: 0;
@@ -72,199 +59,136 @@
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
             background:
                 radial-gradient(
                     circle at 50% 0%,
-                    rgba(0, 255, 213, 0.07),
-                    transparent 30%
+                    rgba(0,255,213,0.07),
+                    transparent 32%
                 ),
-                linear-gradient(
-                    180deg,
-                    #030303 0%,
-                    #050505 100%
-                );
+                #050505;
 
             color: var(--white);
-
             font-family: "Outfit", sans-serif;
-
-            min-height: 100vh;
-
-            overflow-x: hidden;
         }
 
-
-        /* Subtle futuristic grid */
         body::before {
             content: "";
-
             position: fixed;
-
             inset: 0;
-
             pointer-events: none;
+            z-index: -1;
 
-            opacity: 0.035;
+            opacity: 0.025;
 
             background-image:
                 linear-gradient(
-                    rgba(255,255,255,0.15) 1px,
+                    rgba(255,255,255,0.20) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(255,255,255,0.15) 1px,
+                    rgba(255,255,255,0.20) 1px,
                     transparent 1px
                 );
 
             background-size: 40px 40px;
-
-            mask-image:
-                linear-gradient(
-                    to bottom,
-                    black,
-                    transparent 90%
-                );
-
-            z-index: -1;
         }
-
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
 
-        img {
-            display: block;
-            width: 100%;
-        }
-
+        /* =========================================
+           MAIN WRAPPER
+        ========================================= */
 
         .site-wrap {
-            width: min(
-                var(--max-width),
-                calc(100% - 32px)
-            );
-
+            width: min(var(--max-width), calc(100% - 32px));
             margin: 0 auto;
         }
 
 
         /* =========================================
            HEADER
-        ========================================== */
+        ========================================= */
 
         header {
-            padding: 58px 0 25px;
-
             text-align: center;
+            padding: 60px 0 30px;
         }
-
 
         .brand {
             font-family: "Syncopate", sans-serif;
-
+            font-size: clamp(2rem, 5vw, 4.3rem);
             font-weight: 700;
-
-            font-size:
-                clamp(
-                    2rem,
-                    5vw,
-                    4.25rem
-                );
-
-            letter-spacing: 0.10em;
-
+            letter-spacing: 0.09em;
             color: var(--aqua);
 
             text-shadow:
                 0 0 10px rgba(0,255,213,0.35),
-                0 0 28px rgba(0,255,213,0.20);
+                0 0 30px rgba(0,255,213,0.16);
         }
 
-
         .tagline {
-            margin-top: 20px;
+            margin-top: 18px;
 
             color: var(--dim);
 
-            font-size:
-                clamp(
-                    0.70rem,
-                    1.3vw,
-                    0.92rem
-                );
-
+            font-size: clamp(0.72rem, 1.5vw, 0.92rem);
             font-weight: 400;
 
             text-transform: uppercase;
-
-            letter-spacing: 0.26em;
-
-            line-height: 1.6;
+            letter-spacing: 0.22em;
+            line-height: 1.7;
         }
 
-
-        .top-line {
-            width: 130px;
-
+        .header-line {
+            width: 120px;
             height: 2px;
 
+            margin: 28px auto 0;
+
             background: var(--aqua);
-
-            box-shadow:
-                0 0 12px var(--glow);
-
-            margin:
-                28px auto 0;
+            box-shadow: 0 0 15px var(--glow);
         }
 
 
         /* =========================================
            NAVIGATION
-        ========================================== */
+        ========================================= */
 
         nav {
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
+            flex-wrap: wrap;
             gap: 28px;
 
-            flex-wrap: wrap;
-
-            margin:
-                30px 0 10px;
+            margin-top: 28px;
         }
-
 
         nav a {
             color: var(--dim);
 
-            font-size: 0.74rem;
-
-            font-weight: 600;
+            font-size: 0.72rem;
+            font-weight: 700;
 
             text-transform: uppercase;
+            letter-spacing: 0.15em;
 
-            letter-spacing: 0.16em;
-
-            transition:
-                color 0.25s ease,
-                text-shadow 0.25s ease;
+            transition: 0.25s ease;
         }
-
 
         nav a:hover {
             color: var(--aqua);
@@ -276,53 +200,38 @@
 
         /* =========================================
            SECTION HEADING
-        ========================================== */
+        ========================================= */
 
         .section-heading {
-            margin:
-                66px 0 25px;
+            margin: 68px 0 26px;
         }
-
 
         .section-heading h2 {
             font-family: "Syncopate", sans-serif;
 
-            font-size:
-                clamp(
-                    1.15rem,
-                    3vw,
-                    1.9rem
-                );
+            font-size: clamp(1.25rem, 3vw, 2rem);
 
-            letter-spacing: 0.08em;
-
-            color: var(--white);
+            letter-spacing: 0.07em;
         }
 
-
         .section-heading p {
-            margin-top: 8px;
+            margin-top: 9px;
 
             color: var(--dim);
-
             font-size: 0.92rem;
         }
 
 
         /* =========================================
            RELEASE CARD
-        ========================================== */
+        ========================================= */
 
         .release-card {
             position: relative;
 
-            display: grid;
+            margin-bottom: 32px;
 
-            grid-template-columns:
-                minmax(280px, 42%)
-                1fr;
-
-            gap: 36px;
+            padding: 34px;
 
             background:
                 linear-gradient(
@@ -332,44 +241,26 @@
                 ),
                 var(--panel);
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            padding: 30px;
-
-            margin-bottom: 30px;
+            box-shadow:
+                0 20px 65px rgba(0,0,0,0.32);
 
             overflow: hidden;
 
-            box-shadow:
-                0 20px 70px rgba(0,0,0,0.30);
-
             transition:
-                transform 0.3s ease,
-                border-color 0.3s ease;
+                border-color 0.3s ease,
+                transform 0.3s ease;
         }
 
-
-        .release-card:hover {
-            border-color:
-                rgba(0,255,213,0.42);
-
-            transform:
-                translateY(-2px);
-        }
-
-
-        /* Neon vertical accent */
-
-        .release-card::after {
+        .release-card::before {
             content: "";
 
             position: absolute;
-
             left: 0;
             top: 0;
 
-            width: 3px;
+            width: 4px;
             height: 100%;
 
             background: var(--aqua);
@@ -378,204 +269,160 @@
                 0 0 18px var(--glow);
         }
 
-
-        /* =========================================
-           COVER IMAGE
-        ========================================== */
-
-        .cover-wrap {
-            position: relative;
-
-            aspect-ratio: 1 / 1;
-
-            overflow: hidden;
-
-            background: #020202;
-
-            border:
-                1px solid rgba(255,255,255,0.07);
-        }
-
-
-        .cover-wrap img {
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            transition:
-                transform 0.5s ease;
-        }
-
-
-        .release-card:hover
-        .cover-wrap img {
-            transform:
-                scale(1.025);
-        }
-
-
-        .cover-label {
-            position: absolute;
-
-            left: 14px;
-
-            bottom: 14px;
-
-            padding:
-                7px 11px;
-
-            background:
-                rgba(0,0,0,0.78);
-
-            border:
-                1px solid
-                rgba(0,255,213,0.35);
-
-            color: var(--aqua);
-
-            font-size: 0.65rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.15em;
-
-            text-transform: uppercase;
-
-            backdrop-filter:
-                blur(8px);
+        .release-card:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-2px);
         }
 
 
         /* =========================================
-           RELEASE INFO
-        ========================================== */
+           RELEASE TOP INFO
+        ========================================= */
 
-        .release-info {
+        .release-top {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
 
-            flex-direction: column;
+            gap: 20px;
 
-            justify-content: center;
+            margin-bottom: 25px;
         }
-
 
         .release-number {
             color: var(--aqua);
 
-            font-size: 0.72rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.18em;
+            font-size: 0.70rem;
+            font-weight: 800;
 
             text-transform: uppercase;
-
-            margin-bottom: 12px;
+            letter-spacing: 0.17em;
         }
-
 
         .release-date {
             display: inline-block;
 
-            width: fit-content;
+            padding: 7px 11px;
 
-            padding:
-                7px 11px;
+            background: var(--aqua);
+            color: #00110d;
 
-            background:
-                var(--aqua);
-
-            color:
-                #00110d;
-
-            font-size: 0.68rem;
-
-            font-weight: 800;
+            font-size: 0.66rem;
+            font-weight: 900;
 
             text-transform: uppercase;
+            letter-spacing: 0.10em;
 
-            letter-spacing: 0.11em;
-
-            margin-bottom: 18px;
-        }
-
-
-        .artist {
-            color: var(--dim);
-
-            font-size: 0.93rem;
-
-            text-transform: uppercase;
-
-            letter-spacing: 0.11em;
-
-            margin-bottom: 7px;
-        }
-
-
-        .title {
-            font-family:
-                "Syncopate",
-                sans-serif;
-
-            font-size:
-                clamp(
-                    1.35rem,
-                    3vw,
-                    2.25rem
-                );
-
-            line-height: 1.14;
-
-            font-weight: 700;
-
-            color: var(--white);
-        }
-
-
-        .release-divider {
-            width: 65px;
-
-            height: 2px;
-
-            margin:
-                18px 0;
-
-            background:
-                var(--aqua);
-
-            box-shadow:
-                0 0 10px var(--glow);
+            white-space: nowrap;
         }
 
 
         /* =========================================
-           PLAYER BOX
-        ========================================== */
+           RELEASE TITLE
+        ========================================= */
 
-        .player-box {
-            width: 100%;
+        .artist {
+            color: var(--dim);
 
-            margin-top: 20px;
+            font-size: 0.88rem;
+            font-weight: 500;
 
-            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
 
-            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+
+        .release-title {
+            font-family: "Syncopate", sans-serif;
+
+            font-size: clamp(1.45rem, 4vw, 2.6rem);
+            line-height: 1.2;
+
+            font-weight: 700;
+
+            color: var(--white);
+
+            letter-spacing: 0.03em;
+        }
+
+        .divider {
+            width: 70px;
+            height: 2px;
+
+            margin: 20px 0 24px;
+
+            background: var(--aqua);
+
+            box-shadow:
+                0 0 12px var(--glow);
         }
 
 
-        .player-box iframe {
+        /* =========================================
+           PLAYER AREA
+           MAIN FOCUS
+        ========================================= */
+
+        .player-section {
+            position: relative;
+
+            margin-top: 8px;
+            padding: 22px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #060606,
+                    #0d0d0d
+                );
+
+            border: 1px solid rgba(0,255,213,0.16);
+
+            box-shadow:
+                inset 0 0 35px rgba(0,255,213,0.025),
+                0 10px 35px rgba(0,0,0,0.28);
+        }
+
+        .player-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 14px;
+
+            color: var(--aqua);
+
+            font-size: 0.66rem;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .player-label::before {
+            content: "";
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--aqua);
+
+            box-shadow:
+                0 0 10px var(--aqua);
+        }
+
+        .spotify-player iframe {
             display: block;
 
             width: 100%;
+            height: 152px;
 
             border: 0;
+            border-radius: 12px;
         }
-
-
-        /* YouTube responsive iframe */
 
         .youtube-player {
             position: relative;
@@ -584,15 +431,12 @@
 
             aspect-ratio: 16 / 9;
 
-            border-radius: 12px;
-
             overflow: hidden;
 
+            border-radius: 12px;
+
             background: #000;
-
-            margin-top: 20px;
         }
-
 
         .youtube-player iframe {
             position: absolute;
@@ -600,7 +444,6 @@
             inset: 0;
 
             width: 100%;
-
             height: 100%;
 
             border: 0;
@@ -608,408 +451,275 @@
 
 
         /* =========================================
-           BUTTONS
-        ========================================== */
+           LANDING PAGE BUTTON
+        ========================================= */
 
         .release-actions {
-            display: flex;
-
-            gap: 12px;
-
-            flex-wrap: wrap;
-
             margin-top: 22px;
         }
 
-
-        .btn {
+        .landing-button {
             display: inline-flex;
 
             align-items: center;
+            justify-content: center;
 
+            gap: 10px;
+
+            min-height: 48px;
+
+            padding: 13px 20px;
+
+            border: 1px solid var(--aqua);
+
+            background: var(--aqua);
+            color: #00110d;
+
+            font-size: 0.72rem;
+            font-weight: 900;
+
+            text-transform: uppercase;
+            letter-spacing: 0.10em;
+
+            transition: 0.25s ease;
+        }
+
+        .landing-button:hover {
+            background: var(--aqua-bright);
+
+            box-shadow:
+                0 0 25px rgba(0,255,213,0.28);
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================
+           SUPPORT
+        ========================================= */
+
+        .support-box {
+            margin-top: 70px;
+
+            padding: 45px 34px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(0,255,213,0.10),
+                    transparent 28%
+                ),
+                var(--panel);
+
+            border: 1px solid var(--border);
+
+            text-align: center;
+        }
+
+        .support-box h2 {
+            font-family: "Syncopate", sans-serif;
+
+            font-size: clamp(1.2rem, 3vw, 1.9rem);
+
+            letter-spacing: 0.06em;
+        }
+
+        .support-box > p {
+            max-width: 700px;
+
+            margin: 15px auto 0;
+
+            color: var(--dim);
+
+            line-height: 1.7;
+        }
+
+        .support-options {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap: 22px;
+
+            margin-top: 32px;
+        }
+
+        .support-option {
+            padding: 30px 20px;
+
+            background: var(--panel-light);
+
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .support-option i {
+            display: block;
+
+            color: var(--aqua);
+
+            font-size: 1.8rem;
+
+            margin-bottom: 14px;
+
+            text-shadow:
+                0 0 14px var(--glow);
+        }
+
+        .support-option h3 {
+            font-size: 1rem;
+
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+        }
+
+        .support-option p {
+            margin: 9px 0 19px;
+
+            color: var(--dim);
+
+            font-size: 0.84rem;
+        }
+
+        .support-button {
+            display: inline-flex;
+
+            align-items: center;
             justify-content: center;
 
             gap: 9px;
 
             min-height: 46px;
 
-            padding:
-                12px 18px;
+            padding: 12px 18px;
 
-            border:
-                1px solid var(--aqua);
+            border: 1px solid var(--aqua);
 
-            color:
-                var(--aqua);
+            color: var(--aqua);
 
-            background:
-                transparent;
+            font-size: 0.70rem;
+            font-weight: 800;
 
-            font-size:
-                0.73rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
 
-            font-weight:
-                800;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.10em;
-
-            transition:
-                all 0.25s ease;
+            transition: 0.25s ease;
         }
 
-
-        .btn:hover {
-            background:
-                var(--aqua);
-
-            color:
-                #00110d;
+        .support-button:hover {
+            background: var(--aqua);
+            color: #00110d;
 
             box-shadow:
-                0 0 24px
-                rgba(0,255,213,0.27);
-
-            transform:
-                translateY(-1px);
-        }
-
-
-        .btn-primary {
-            background:
-                var(--aqua);
-
-            color:
-                #00110d;
-        }
-
-
-        .btn-primary:hover {
-            background:
-                #66ffe8;
-
-            color:
-                #00110d;
+                0 0 22px rgba(0,255,213,0.25);
         }
 
 
         /* =========================================
-           SUPPORT SECTION
-        ========================================== */
-
-        .support-box {
-            background:
-                radial-gradient(
-                    circle at 85% 15%,
-                    rgba(0,255,213,0.10),
-                    transparent 30%
-                ),
-                var(--panel);
-
-            border:
-                1px solid var(--border);
-
-            padding:
-                42px;
-
-            margin-top:
-                65px;
-
-            text-align:
-                center;
-        }
-
-
-        .support-box h2,
-        .contact-box h2 {
-            font-family:
-                "Syncopate",
-                sans-serif;
-
-            font-size:
-                clamp(
-                    1.15rem,
-                    3vw,
-                    1.8rem
-                );
-
-            letter-spacing:
-                0.07em;
-        }
-
-
-        .support-box > p,
-        .contact-box > p {
-            max-width:
-                700px;
-
-            margin:
-                14px auto 0;
-
-            color:
-                var(--dim);
-
-            line-height:
-                1.7;
-        }
-
-
-        .support-options {
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(
-                    2,
-                    minmax(0,1fr)
-                );
-
-            gap:
-                22px;
-
-            margin-top:
-                30px;
-        }
-
-
-        .support-option {
-            background:
-                var(--panel-2);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            padding:
-                28px 20px;
-        }
-
-
-        .support-option i {
-            font-size:
-                1.8rem;
-
-            color:
-                var(--aqua);
-
-            margin-bottom:
-                12px;
-
-            text-shadow:
-                0 0 14px var(--glow);
-        }
-
-
-        .support-option h3 {
-            font-size:
-                1rem;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.10em;
-        }
-
-
-        .support-option p {
-            font-size:
-                0.85rem;
-
-            margin:
-                8px auto 18px;
-        }
-
-
-        /* =========================================
-           QR CODE
-        ========================================== */
-
-        .qr-wrap {
-            width:
-                170px;
-
-            height:
-                170px;
-
-            padding:
-                10px;
-
-            margin:
-                0 auto 18px;
-
-            background:
-                #ffffff;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-        }
-
-
-        .qr-wrap img {
-            width:
-                150px;
-
-            height:
-                150px;
-        }
-
-
-        /* =========================================
-           CONTACT SECTION
-        ========================================== */
+           CONTACT
+        ========================================= */
 
         .contact-box {
-            margin:
-                30px 0 70px;
+            margin: 30px 0 70px;
 
-            background:
-                var(--panel);
+            padding: 44px 30px;
 
-            border:
-                1px solid var(--border);
+            background: var(--panel);
 
-            padding:
-                42px;
+            border: 1px solid var(--border);
 
-            text-align:
-                center;
+            text-align: center;
         }
 
+        .contact-box h2 {
+            font-family: "Syncopate", sans-serif;
 
-        .contact-link {
-            display:
-                inline-flex;
+            font-size: clamp(1.2rem, 3vw, 1.9rem);
 
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            gap:
-                12px;
-
-            margin-top:
-                24px;
-
-            padding:
-                15px 22px;
-
-            color:
-                var(--aqua);
-
-            border:
-                1px solid var(--aqua);
-
-            font-size:
-                0.85rem;
-
-            font-weight:
-                700;
-
-            transition:
-                0.25s ease;
-
-            word-break:
-                break-word;
+            letter-spacing: 0.06em;
         }
 
+        .contact-box p {
+            margin-top: 14px;
 
-        .contact-link:hover {
-            background:
-                var(--aqua);
+            color: var(--dim);
 
-            color:
-                #00110d;
+            font-size: 0.93rem;
+        }
+
+        .contact-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 11px;
+
+            margin-top: 23px;
+
+            padding: 15px 22px;
+
+            border: 1px solid var(--aqua);
+
+            color: var(--aqua);
+
+            font-size: 0.78rem;
+            font-weight: 800;
+
+            word-break: break-word;
+
+            transition: 0.25s ease;
+        }
+
+        .contact-button:hover {
+            background: var(--aqua);
+            color: #00110d;
 
             box-shadow:
-                0 0 25px
-                rgba(0,255,213,0.28);
+                0 0 25px rgba(0,255,213,0.28);
         }
 
 
         /* =========================================
            FOOTER
-        ========================================== */
+        ========================================= */
 
         footer {
             border-top:
-                1px solid
-                rgba(255,255,255,0.07);
+                1px solid rgba(255,255,255,0.07);
 
-            padding:
-                26px 0 35px;
+            padding: 28px 0 38px;
 
-            text-align:
-                center;
+            color: #707070;
 
-            color:
-                #777;
+            text-align: center;
 
-            font-size:
-                0.72rem;
+            font-size: 0.68rem;
 
-            letter-spacing:
-                0.12em;
+            letter-spacing: 0.12em;
 
-            text-transform:
-                uppercase;
+            line-height: 1.9;
 
-            line-height:
-                1.8;
+            text-transform: uppercase;
         }
 
-
         footer span {
-            color:
-                var(--aqua);
+            color: var(--aqua);
         }
 
 
         /* =========================================
            TABLET
-        ========================================== */
+        ========================================= */
 
-        @media (max-width: 850px) {
+        @media (max-width: 800px) {
 
             .release-card {
-                grid-template-columns:
-                    1fr;
-
-                padding:
-                    22px;
-
-                gap:
-                    24px;
+                padding: 26px;
             }
-
-
-            .release-info {
-                justify-content:
-                    flex-start;
-            }
-
 
             .support-options {
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .support-box,
-            .contact-box {
-                padding:
-                    28px 20px;
+                grid-template-columns: 1fr;
             }
 
         }
@@ -1017,83 +727,66 @@
 
         /* =========================================
            PHONE
-        ========================================== */
+        ========================================= */
 
         @media (max-width: 560px) {
 
             .site-wrap {
-                width:
-                    min(
-                        100% - 20px,
-                        var(--max-width)
-                    );
+                width: calc(100% - 18px);
             }
-
 
             header {
-                padding-top:
-                    35px;
+                padding-top: 38px;
             }
-
 
             .brand {
-                font-size:
-                    clamp(
-                        1.65rem,
-                        8vw,
-                        2.5rem
-                    );
-
-                letter-spacing:
-                    0.08em;
+                font-size: 1.65rem;
+                letter-spacing: 0.06em;
             }
-
 
             .tagline {
-                line-height:
-                    1.75;
-
-                letter-spacing:
-                    0.15em;
+                font-size: 0.68rem;
+                letter-spacing: 0.14em;
             }
-
 
             nav {
-                gap:
-                    17px;
+                gap: 17px;
             }
 
+            .section-heading {
+                margin-top: 50px;
+            }
 
             .release-card {
-                padding:
-                    16px;
+                padding: 19px;
             }
 
-
-            .title {
-                font-size:
-                    1.23rem;
+            .release-top {
+                flex-direction: column;
+                gap: 13px;
             }
 
-
-            .release-actions {
-                flex-direction:
-                    column;
+            .release-date {
+                align-self: flex-start;
             }
 
-
-            .btn {
-                width:
-                    100%;
+            .release-title {
+                font-size: 1.3rem;
             }
 
+            .player-section {
+                padding: 14px;
+            }
 
-            .contact-link {
-                width:
-                    100%;
+            .landing-button,
+            .contact-button,
+            .support-button {
+                width: 100%;
+            }
 
-                font-size:
-                    0.74rem;
+            .support-box,
+            .contact-box {
+                padding: 32px 18px;
             }
 
         }
@@ -1104,691 +797,478 @@
 
 <body>
 
+<div class="site-wrap">
 
-    <div class="site-wrap">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header>
+
+        <div class="brand">
+            HYPERFORMULA MUSIC
+        </div>
+
+        <div class="tagline">
+            Creative Turntablism, Human &amp; Hybrid Music Production
+        </div>
+
+        <div class="header-line"></div>
+
+        <nav>
+            <a href="#releases">Latest Releases</a>
+            <a href="#support">Support Us Directly</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
 
 
-        <!-- =========================================
-             HEADER
-        ========================================== -->
+    <!-- =========================================
+         LATEST RELEASES
+    ========================================== -->
 
-        <header>
+    <main id="releases">
 
-            <div class="brand">
-                HYPERFORMULA MUSIC
+        <div class="section-heading">
+
+            <h2>
+                LATEST RELEASES
+            </h2>
+
+            <p>
+                Listen directly below, then explore each release.
+            </p>
+
+        </div>
+
+
+        <!-- =====================================
+             RELEASE #1
+        ====================================== -->
+
+        <article class="release-card">
+
+            <div class="release-top">
+
+                <div class="release-number">
+                    RELEASE 01
+                </div>
+
+                <div class="release-date">
+                    OCTOBER 2026
+                </div>
+
             </div>
 
 
-            <div class="tagline">
-                Creative Turntablism, Human &amp; Hybrid Music Production
+            <div class="artist">
+                My Star's Soul
+            </div>
+
+            <h3 class="release-title">
+                FLOTAR
+            </h3>
+
+            <div class="divider"></div>
+
+
+            <!-- MAIN PLAYER -->
+
+            <div class="player-section">
+
+                <div class="player-label">
+                    Listen Now
+                </div>
+
+                <div class="spotify-player">
+
+                    <iframe
+                        data-testid="embed-iframe"
+                        src="https://open.spotify.com/embed/album/1GXkC5p3myzQYPueLwgOXI?utm_source=generator&si=56a5a44e14b64a44"
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
             </div>
 
 
-            <div class="top-line"></div>
+            <div class="release-actions">
 
+                <a
+                    class="landing-button"
+                    href="https://distrokid.com/hyperfollow/mystarssoul/flotar-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
-            <nav>
-
-                <a href="#releases">
-                    Latest Releases
+                    Explore Full Release
                 </a>
 
-                <a href="#support">
-                    Support Us Directly
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================
+             RELEASE #2
+        ====================================== -->
+
+        <article class="release-card">
+
+            <div class="release-top">
+
+                <div class="release-number">
+                    RELEASE 02
+                </div>
+
+                <div class="release-date">
+                    SEPTEMBER 2026
+                </div>
+
+            </div>
+
+
+            <div class="artist">
+                Mad Influence
+            </div>
+
+            <h3 class="release-title">
+                BEFORE THE FALL
+            </h3>
+
+            <div class="divider"></div>
+
+
+            <!-- MAIN PLAYER -->
+
+            <div class="player-section">
+
+                <div class="player-label">
+                    Listen Now
+                </div>
+
+                <div class="youtube-player">
+
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/videoseries?si=jtbEexhrxWSjJNCP&amp;list=OLAK5uy_n0jtf-IijyJuSuGRzpmy2h0CMwevwjEeY"
+                        title="Before The Fall - Mad Influence"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+
+            <div class="release-actions">
+
+                <a
+                    class="landing-button"
+                    href="https://distrokid.com/hyperfollow/madinfluence/before-the-fall"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    Explore Full Release
                 </a>
 
-                <a href="#contact">
-                    Contact
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================
+             RELEASE #3
+        ====================================== -->
+
+        <article class="release-card">
+
+            <div class="release-top">
+
+                <div class="release-number">
+                    RELEASE 03
+                </div>
+
+                <div class="release-date">
+                    JULY 2026
+                </div>
+
+            </div>
+
+
+            <div class="artist">
+                Alpha Infinite
+            </div>
+
+            <h3 class="release-title">
+                PERDIDO
+            </h3>
+
+            <div class="divider"></div>
+
+
+            <!-- MAIN PLAYER -->
+
+            <div class="player-section">
+
+                <div class="player-label">
+                    Watch / Listen Now
+                </div>
+
+                <div class="youtube-player">
+
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/MDQyTIvgXro?si=bDH1sZGFjzFnkhrm"
+                        title="Perdido - Alpha Infinite"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+
+            <div class="release-actions">
+
+                <a
+                    class="landing-button"
+                    href="https://distrokid.com/hyperfollow/alphainfinite/alpha-infinite---perdido"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    Explore Full Release
                 </a>
 
-            </nav>
+            </div>
 
-        </header>
-
-
-        <!-- =========================================
-             LATEST RELEASES
-        ========================================== -->
-
-        <main id="releases">
+        </article>
 
 
-            <div class="section-heading">
 
-                <h2>
-                    LATEST RELEASES
-                </h2>
+        <!-- =====================================
+             RELEASE #4
+        ====================================== -->
+
+        <article class="release-card">
+
+            <div class="release-top">
+
+                <div class="release-number">
+                    RELEASE 04
+                </div>
+
+                <div class="release-date">
+                    AUGUST 2026
+                </div>
+
+            </div>
+
+
+            <div class="artist">
+                Mad Influence
+            </div>
+
+            <h3 class="release-title">
+                YOU LIED EP
+            </h3>
+
+            <div class="divider"></div>
+
+
+            <!-- MAIN PLAYER -->
+
+            <div class="player-section">
+
+                <div class="player-label">
+                    Watch / Listen Now
+                </div>
+
+                <div class="youtube-player">
+
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/NsI-tHJI6uI?si=AVbSN4LFOs0KNbPh"
+                        title="You Lied EP - Mad Influence"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+
+            <div class="release-actions">
+
+                <a
+                    class="landing-button"
+                    href="https://distrokid.com/hyperfollow/madinfluence/you-lied-ep"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    Explore Full Release
+                </a>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+
+    <!-- =========================================
+         SUPPORT US DIRECTLY
+    ========================================== -->
+
+    <section
+        id="support"
+        class="support-box"
+    >
+
+        <h2>
+            SUPPORT US DIRECTLY
+        </h2>
+
+        <p>
+            Help support the continued development of independent music,
+            creative turntablism, and the Hyperformula Music project.
+        </p>
+
+
+        <div class="support-options">
+
+
+            <!-- PAYPAL -->
+
+            <div class="support-option">
+
+                <i class="fa-brands fa-paypal"></i>
+
+                <h3>
+                    PayPal
+                </h3>
 
                 <p>
-                    Music from the Hyperformula Music project.
+                    Support the project through PayPal.
                 </p>
 
-            </div>
-
-
-            <!-- ==================================================
-                 RELEASE #1
-                 
-                 IMAGE LOCATION:
-                 assets/images/flotar.jpg
-            =================================================== -->
-
-            <article class="release-card">
-
-
-                <div class="cover-wrap">
-
-                    <!--
-                        ADD YOUR IMAGE HERE:
-
-                        assets/images/flotar.jpg
-                    -->
-
-                    <img
-                        src="assets/images/flotar.jpg"
-                        alt="Flotar by My Star's Soul"
-                    >
-
-                    <div class="cover-label">
-                        Release 01
-                    </div>
-
-                </div>
-
-
-                <div class="release-info">
-
-
-                    <div class="release-date">
-                        RELEASE DATE — OCTOBER 2026
-                    </div>
-
-
-                    <div class="release-number">
-                        Latest Release / 01
-                    </div>
-
-
-                    <div class="artist">
-                        My Star's Soul
-                    </div>
-
-
-                    <h3 class="title">
-                        FLOTAR
-                    </h3>
-
-
-                    <div class="release-divider"></div>
-
-
-                    <!-- Spotify Embed -->
-
-                    <div class="player-box">
-
-                        <iframe
-                            data-testid="embed-iframe"
-                            style="border-radius:12px"
-                            src="https://open.spotify.com/embed/album/1GXkC5p3myzQYPueLwgOXI?utm_source=generator&si=56a5a44e14b64a44"
-                            width="100%"
-                            height="152"
-                            frameborder="0"
-                            allowfullscreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy">
-                        </iframe>
-
-                    </div>
-
-
-                    <div class="release-actions">
-
-                        <a
-                            class="btn btn-primary"
-                            href="https://distrokid.com/hyperfollow/mystarssoul/flotar-2"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                            Open Landing Page
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-            </article>
-
-
-
-            <!-- ==================================================
-                 RELEASE #2
-                 
-                 IMAGE LOCATION:
-                 assets/images/before-the-fall.jpg
-            =================================================== -->
-
-            <article class="release-card">
-
-
-                <div class="cover-wrap">
-
-                    <!--
-                        ADD YOUR IMAGE HERE:
-
-                        assets/images/before-the-fall.jpg
-                    -->
-
-                    <img
-                        src="assets/images/before-the-fall.jpg"
-                        alt="Before The Fall by Mad Influence"
-                    >
-
-                    <div class="cover-label">
-                        Release 02
-                    </div>
-
-                </div>
-
-
-                <div class="release-info">
-
-
-                    <div class="release-date">
-                        RELEASE DATE — SEPTEMBER 2026
-                    </div>
-
-
-                    <div class="release-number">
-                        Latest Release / 02
-                    </div>
-
-
-                    <div class="artist">
-                        Mad Influence
-                    </div>
-
-
-                    <h3 class="title">
-                        BEFORE THE FALL
-                    </h3>
-
-
-                    <div class="release-divider"></div>
-
-
-                    <!-- YouTube Embed -->
-
-                    <div class="youtube-player">
-
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/videoseries?si=jtbEexhrxWSjJNCP&amp;list=OLAK5uy_n0jtf-IijyJuSuGRzpmy2h0CMwevwjEeY"
-                            title="Before The Fall - Mad Influence"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-
-                    <div class="release-actions">
-
-                        <a
-                            class="btn btn-primary"
-                            href="https://distrokid.com/hyperfollow/madinfluence/before-the-fall"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                            Open Landing Page
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-            </article>
-
-
-
-            <!-- ==================================================
-                 RELEASE #3
-                 
-                 IMAGE LOCATION:
-                 assets/images/perdido.jpg
-            =================================================== -->
-
-            <article class="release-card">
-
-
-                <div class="cover-wrap">
-
-                    <!--
-                        ADD YOUR IMAGE HERE:
-
-                        assets/images/perdido.jpg
-                    -->
-
-                    <img
-                        src="assets/images/perdido.jpg"
-                        alt="Perdido by Alpha Infinite"
-                    >
-
-                    <div class="cover-label">
-                        Release 03
-                    </div>
-
-                </div>
-
-
-                <div class="release-info">
-
-
-                    <div class="release-date">
-                        RELEASE DATE — JULY 2026
-                    </div>
-
-
-                    <div class="release-number">
-                        Latest Release / 03
-                    </div>
-
-
-                    <div class="artist">
-                        Alpha Infinite
-                    </div>
-
-
-                    <h3 class="title">
-                        PERDIDO
-                    </h3>
-
-
-                    <div class="release-divider"></div>
-
-
-                    <!-- YouTube Embed -->
-
-                    <div class="youtube-player">
-
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/MDQyTIvgXro?si=bDH1sZGFjzFnkhrm"
-                            title="Perdido - Alpha Infinite"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-
-                    <div class="release-actions">
-
-                        <a
-                            class="btn btn-primary"
-                            href="https://distrokid.com/hyperfollow/alphainfinite/alpha-infinite---perdido"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                            Open Landing Page
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-            </article>
-
-
-
-            <!-- ==================================================
-                 RELEASE #4
-                 
-                 IMAGE LOCATION:
-                 assets/images/you-lied-ep.jpg
-            =================================================== -->
-
-            <article class="release-card">
-
-
-                <div class="cover-wrap">
-
-                    <!--
-                        ADD YOUR IMAGE HERE:
-
-                        assets/images/you-lied-ep.jpg
-                    -->
-
-                    <img
-                        src="assets/images/you-lied-ep.jpg"
-                        alt="You Lied EP by Mad Influence"
-                    >
-
-                    <div class="cover-label">
-                        Release 04
-                    </div>
-
-                </div>
-
-
-                <div class="release-info">
-
-
-                    <div class="release-date">
-                        RELEASE DATE — AUGUST 2026
-                    </div>
-
-
-                    <div class="release-number">
-                        Latest Release / 04
-                    </div>
-
-
-                    <div class="artist">
-                        Mad Influence
-                    </div>
-
-
-                    <h3 class="title">
-                        YOU LIED EP
-                    </h3>
-
-
-                    <div class="release-divider"></div>
-
-
-                    <!-- YouTube Embed -->
-
-                    <div class="youtube-player">
-
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/NsI-tHJI6uI?si=AVbSN4LFOs0KNbPh"
-                            title="You Lied EP - Mad Influence"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
-
-                    </div>
-
-
-                    <div class="release-actions">
-
-                        <a
-                            class="btn btn-primary"
-                            href="https://distrokid.com/hyperfollow/madinfluence/you-lied-ep"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                            Open Landing Page
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-            </article>
-
-
-        </main>
-
-
-
-        <!-- =========================================
-             SUPPORT US DIRECTLY
-        ========================================== -->
-
-        <section
-            id="support"
-            class="support-box"
-        >
-
-
-            <h2>
-                SUPPORT US DIRECTLY
-            </h2>
-
-
-            <p>
-                Help support independent music, creative experimentation,
-                and the continued development of the Hyperformula Music project.
-            </p>
-
-
-            <div class="support-options">
-
-
-                <!-- =====================================
-                     PAYPAL
-                ====================================== -->
-
-                <div class="support-option">
-
-
+                <a
+                    class="support-button"
+                    href="https://www.paypal.me/jjmjr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <i class="fa-brands fa-paypal"></i>
 
-
-                    <h3>
-                        PayPal
-                    </h3>
-
-
-                    <p>
-                        Support via PayPal
-                    </p>
-
-
-                    <div
-                        id="paypalQR"
-                        class="qr-wrap">
-                    </div>
-
-
-                    <a
-                        class="btn btn-primary"
-                        href="https://www.paypal.me/jjmjr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-brands fa-paypal"></i>
-
-                        Support via PayPal
-                    </a>
-
-
-                </div>
-
-
-
-                <!-- =====================================
-                     CASH APP
-                ====================================== -->
-
-                <div class="support-option">
-
-
-                    <i class="fa-solid fa-dollar-sign"></i>
-
-
-                    <h3>
-                        Cash App
-                    </h3>
-
-
-                    <p>
-                        $JMadInfluence
-                    </p>
-
-
-                    <div
-                        id="cashappQR"
-                        class="qr-wrap">
-                    </div>
-
-
-                    <a
-                        class="btn btn-primary"
-                        href="https://cash.app/$JMadInfluence"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        Support via Cash App
-                    </a>
-
-
-                </div>
-
+                    Support via PayPal
+                </a>
 
             </div>
 
 
-        </section>
+            <!-- CASH APP -->
+
+            <div class="support-option">
+
+                <i class="fa-solid fa-dollar-sign"></i>
+
+                <h3>
+                    Cash App
+                </h3>
+
+                <p>
+                    $JMadInfluence
+                </p>
+
+                <a
+                    class="support-button"
+                    href="https://cash.app/$JMadInfluence"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    Support via Cash App
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
 
-        <!-- =========================================
-             CONTACT
-        ========================================== -->
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
 
-        <section
-            id="contact"
-            class="contact-box"
+    <section
+        id="contact"
+        class="contact-box"
+    >
+
+        <h2>
+            CONTACT US
+        </h2>
+
+        <p>
+            Bookings, Licensing &amp; Email Inquiries
+        </p>
+
+        <a
+            class="contact-button"
+            href="mailto:buffthenerfadmin@protonmail.com?subject=Hyperformula%20Music%20Inquiry"
         >
+            <i class="fa-solid fa-envelope"></i>
+
+            buffthenerfadmin@protonmail.com
+        </a>
+
+    </section>
 
 
-            <h2>
-                CONTACT US
-            </h2>
-
-
-            <p>
-                Bookings, Licensing &amp; Email Inquiries
-            </p>
-
-
-            <a
-                class="contact-link"
-                href="mailto:buffthenerfadmin@protonmail.com?subject=Hyperformula%20Music%20Inquiry"
-            >
-
-                <i class="fa-solid fa-envelope"></i>
-
-                buffthenerfadmin@protonmail.com
-
-            </a>
-
-
-        </section>
-
-
-    </div>
+</div>
 
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
+<!-- =========================================
+     FOOTER
+========================================== -->
 
-    <footer>
+<footer>
 
-        HYPERFORMULA MUSIC
+    HYPERFORMULA MUSIC
 
-        &nbsp;•&nbsp;
+    &nbsp;•&nbsp;
 
-        <span>
-            CREATIVE TURNTABLISM
-        </span>
+    <span>
+        CREATIVE TURNtablism
+    </span>
 
-        &nbsp;•&nbsp;
+    &nbsp;•&nbsp;
 
-        HUMAN &amp; HYBRID MUSIC PRODUCTION
+    HUMAN &amp; HYBRID MUSIC PRODUCTION
 
-    </footer>
-
-
-
-    <!-- =========================================
-         QR CODE SCRIPT
-    ========================================== -->
-
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-                /* =====================================
-                   PAYPAL QR
-                ====================================== */
-
-                new QRCode(
-                    document.getElementById("paypalQR"),
-                    {
-                        text:
-                            "https://www.paypal.me/jjmjr",
-
-                        width: 150,
-
-                        height: 150,
-
-                        colorDark:
-                            "#000000",
-
-                        colorLight:
-                            "#ffffff",
-
-                        correctLevel:
-                            QRCode.CorrectLevel.H
-                    }
-                );
-
-
-                /* =====================================
-                   CASH APP QR
-                ====================================== */
-
-                new QRCode(
-                    document.getElementById("cashappQR"),
-                    {
-                        text:
-                            "https://cash.app/$JMadInfluence",
-
-                        width: 150,
-
-                        height: 150,
-
-                        colorDark:
-                            "#000000",
-
-                        colorLight:
-                            "#ffffff",
-
-                        correctLevel:
-                            QRCode.CorrectLevel.H
-                    }
-                );
-
-            }
-
-        );
-
-    </script>
+</footer>
 
 
 </body>
