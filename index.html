@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#030303">
-  <meta name="description" content="HYPERFORMULA MUSIC — Creative Turntablism, Human & Hybrid Music Production.">
+  <meta name="description" content="HYPERFORMULA MUSIC â€” Creative Turntablism, Human & Hybrid Music Production.">
 
   <!-- Content Security Policy -->
   <meta http-equiv="Content-Security-Policy" content="
@@ -344,6 +344,62 @@
       font-size: 0.8rem;
     }
 
+    .support-message {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      text-align: center;
+      margin: 0 0 24px;
+      padding: 20px;
+      background: var(--surface-color);
+      border: 1px solid rgba(0, 255, 213, 0.22);
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .email-qr-note {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .soundcloud-offer {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 760px;
+      padding: 16px 18px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      background: rgba(0, 255, 213, 0.05);
+    }
+
+    .soundcloud-offer a {
+      display: inline-block;
+      color: var(--accent);
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+      font-weight: 600;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+      text-underline-offset: 4px;
+      text-decoration: underline;
+    }
+
+    .soundcloud-offer a:hover,
+    .soundcloud-offer a:focus-visible {
+      color: var(--text-main);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    iframe,
+    img {
+      max-width: 100%;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 0 15px;
@@ -376,12 +432,60 @@
     }
 
     @media (max-width: 480px) {
+      .container {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
       .qr-container {
         grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .qr-card {
+        padding: 22px 14px;
       }
 
       nav {
-        gap: 15px;
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 0.72rem;
+        padding: 9px 10px;
+      }
+
+      .section-title {
+        margin-bottom: 24px;
+        line-height: 1.35;
+      }
+
+      .support-message {
+        font-size: 0.92rem;
+        padding: 16px 14px;
+        margin-bottom: 16px;
+      }
+
+      .email-box {
+        padding: 24px 14px;
+      }
+
+      footer {
+        padding: 32px 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
@@ -426,22 +530,27 @@
           <div class="release-number">Release 01</div>
           <div class="release-header">
             <div class="release-info">
-              <h2>My Star's Soul — Flotar</h2>
+              <h2>My Star's Soul â€” Flotar</h2>
               <div class="release-meta">My Star's Soul | October 2026</div>
             </div>
             <a class="release-link" href="https://distrokid.com/hyperfollow/mystarssoul/flotar-2" target="_blank" rel="noopener noreferrer">Open Full Release</a>
           </div>
           <div class="embed-container spotify-embed">
-            <iframe src="https://open.spotify.com/embed/album/1GXkC5p3myzQYPueLwgOXI?utm_source=generator&amp;si=56a5a44e14b64a44" title="My Star's Soul — Flotar" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe src="https://open.spotify.com/embed/album/1GXkC5p3myzQYPueLwgOXI?utm_source=generator&amp;si=56a5a44e14b64a44" title="My Star's Soul â€” Flotar" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           </div>
         </article>
+
+        <!-- SoundCloud Artist Pro offer -->
+        <div class="soundcloud-offer">
+          <a href="https://invite.soundcloud.com/eyanw!8b9f6276af!a" target="_blank" rel="noopener noreferrer">Get A Free Month Of SoundCloud Artist Pro on us â€” click here</a>
+        </div>
 
         <!-- Release 02 -->
         <article class="release-card">
           <div class="release-number">Release 02</div>
           <div class="release-header">
             <div class="release-info">
-              <h2>Mad Influence — Before The Fall</h2>
+              <h2>Mad Influence â€” Before The Fall</h2>
               <div class="release-meta">Mad Influence | September 2026</div>
             </div>
             <a class="release-link" href="https://distrokid.com/hyperfollow/madinfluence/before-the-fall" target="_blank" rel="noopener noreferrer">Open Full Release</a>
@@ -456,7 +565,7 @@
           <div class="release-number">Release 03</div>
           <div class="release-header">
             <div class="release-info">
-              <h2>Alpha Infinite — Perdido</h2>
+              <h2>Alpha Infinite â€” Perdido</h2>
               <div class="release-meta">Alpha Infinite | July 2026</div>
             </div>
             <a class="release-link" href="https://distrokid.com/hyperfollow/alphainfinite/alpha-infinite---perdido" target="_blank" rel="noopener noreferrer">Open Full Release</a>
@@ -471,7 +580,7 @@
           <div class="release-number">Release 04</div>
           <div class="release-header">
             <div class="release-info">
-              <h2>Mad Influence — You Lied EP</h2>
+              <h2>Mad Influence â€” You Lied EP</h2>
               <div class="release-meta">Mad Influence | August 2026</div>
             </div>
             <a class="release-link" href="https://distrokid.com/hyperfollow/madinfluence/you-lied-ep" target="_blank" rel="noopener noreferrer">Open Full Release</a>
@@ -488,6 +597,8 @@
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Contact</h2>
+
+      <p class="support-message">We Are An Small Biz That relies on Streams and Song sales, affiliate links and direct, gratuitous financial support from our listeners! If you like what you hear &amp; you wanna help us grow feel free to use either QR code to fund our vision and passion - Music!</p>
       
       <div class="qr-container">
         <!-- Cash App -->
@@ -506,6 +617,7 @@
 
         <!-- Email QR -->
         <div class="qr-card">
+          <p class="email-qr-note">Or Contact us for more info or if you have any questions</p>
           <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=mailto%3Abuffthenerfadmin%40protonmail.com" alt="Email QR code">
           <div class="qr-title">Email</div>
           <div class="qr-desc">buffthenerfadmin@protonmail.com</div>
